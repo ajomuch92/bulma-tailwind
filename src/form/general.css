@@ -1,0 +1,129 @@
+@layer components {
+  /* Contenedor principal de campo */
+  .field {
+    @apply mb-4;
+  }
+  
+  /* Grupo de campos (horizontal) */
+  .field.is-grouped {
+    @apply flex gap-2;
+  }
+  
+  .field.is-grouped-centered {
+    @apply justify-center;
+  }
+  
+  .field.is-grouped-right {
+    @apply justify-end;
+  }
+  
+  /* Grupo de campos con expansión */
+  .field.is-grouped .control.is-expanded {
+    @apply flex-1;
+  }
+  
+  /* Etiqueta */
+  .label {
+    @apply block font-semibold text-dark mb-2;
+  }
+  
+  /* Texto de ayuda */
+  .help {
+    @apply block text-sm mt-1 text-grey-dark;
+  }
+  
+  .help.is-primary { color: var(--color-primary); }
+  .help.is-link { color: var(--color-link); }
+  .help.is-info { color: var(--color-info); }
+  .help.is-success { color: var(--color-success); }
+  .help.is-warning { color: var(--color-warning); }
+  .help.is-danger { color: var(--color-danger); }
+  
+  /* Control: wrapper alrededor de input/select/textarea */
+  .control {
+    @apply relative;
+  }
+  
+  /* Iconos dentro de control (izquierda/derecha) */
+  .control.has-icons-left .icon,
+  .control.has-icons-right .icon {
+    @apply absolute top-1/2 -translate-y-1/2 pointer-events-none text-grey-dark;
+  }
+  
+  .control.has-icons-left .icon {
+    @apply left-2;
+  }
+  
+  .control.has-icons-right .icon {
+    @apply right-2;
+  }
+  
+  .control.has-icons-left input,
+  .control.has-icons-left select,
+  .control.has-icons-left textarea {
+    @apply pl-8;
+  }
+  
+  .control.has-icons-right input,
+  .control.has-icons-right select,
+  .control.has-icons-right textarea {
+    @apply pr-8;
+  }
+  
+  /* Loading spinner dentro de control */
+  .control.is-loading::after {
+    content: "";
+    @apply absolute top-1/2 right-2 w-4 h-4 border-2 border-grey-dark border-t-primary rounded-full animate-spin -translate-y-1/2;
+  }
+  
+  /* Tamaños de control que afectan a inputs internos */
+  .control.is-small input,
+  .control.is-small select,
+  .control.is-small textarea {
+    @apply text-sm py-1;
+  }
+  
+  .control.is-medium input,
+  .control.is-medium select,
+  .control.is-medium textarea {
+    @apply text-base py-2.5;
+  }
+  
+  .control.is-large input,
+  .control.is-large select,
+  .control.is-large textarea {
+    @apply text-lg py-3;
+  }
+  
+  /* Expansión (usa todo el ancho) */
+  .control.is-expanded {
+    @apply w-full;
+  }
+  
+  /* Grupo de botones dentro de field */
+  .field.has-addons {
+    @apply flex;
+  }
+  
+  .field.has-addons .control:not(:last-child) {
+    @apply mr-0;
+  }
+  
+  .field.has-addons .control:first-child input,
+  .field.has-addons .control:first-child select,
+  .field.has-addons .control:first-child button {
+    @apply rounded-r-none;
+  }
+  
+  .field.has-addons .control:last-child input,
+  .field.has-addons .control:last-child select,
+  .field.has-addons .control:last-child button {
+    @apply rounded-l-none;
+  }
+  
+  .field.has-addons .control:not(:first-child):not(:last-child) input,
+  .field.has-addons .control:not(:first-child):not(:last-child) select,
+  .field.has-addons .control:not(:first-child):not(:last-child) button {
+    @apply rounded-none;
+  }
+}

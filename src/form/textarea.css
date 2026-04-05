@@ -1,0 +1,28 @@
+@layer components {
+  .textarea {
+    @apply block w-full px-3 py-2 border border-grey rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 resize-vertical;
+  }
+  /* Tamaños */
+  .textarea.is-small {
+    @apply text-sm py-1;
+  }
+  .textarea.is-medium {
+    @apply text-base py-2.5;
+  }
+  .textarea.is-large {
+    @apply text-lg py-3;
+  }
+  /* Estados */
+  .textarea.is-primary {
+    @apply border-primary;
+  }
+  .textarea.is-danger {
+    @apply border-danger;
+  }
+  .textarea.is-rounded {
+    @apply rounded-full;
+  }
+  .textarea.has-fixed-size {
+    @apply resize-none;
+  }
+}

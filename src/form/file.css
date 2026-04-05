@@ -1,0 +1,44 @@
+@layer components {
+  .file {
+    @apply relative inline-flex items-stretch;
+  }
+  .file-input {
+    @apply absolute inset-0 opacity-0 cursor-pointer w-full h-full;
+  }
+  .file-cta {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-l-md border border-grey bg-grey-light text-dark;
+  }
+  .file-name {
+    @apply inline-flex items-center px-3 py-2 rounded-r-md border border-l-0 border-grey bg-white text-dark whitespace-nowrap overflow-hidden text-ellipsis;
+  }
+  /* Colores */
+  .file.is-primary .file-cta {
+    @apply bg-primary border-primary text-white;
+  }
+  .file.is-link .file-cta {
+    @apply bg-link border-link text-white;
+  }
+  .file.is-danger .file-cta {
+    @apply bg-danger border-danger text-white;
+  }
+  /* Tamaños */
+  .file.is-small .file-cta,
+  .file.is-small .file-name {
+    @apply text-sm px-2 py-1;
+  }
+  .file.is-medium .file-cta,
+  .file.is-medium .file-name {
+    @apply text-base px-4 py-2.5;
+  }
+  .file.is-large .file-cta,
+  .file.is-large .file-name {
+    @apply text-lg px-5 py-3;
+  }
+  /* Variante boxed */
+  .file.is-boxed .file-cta {
+    @apply rounded-md border-2;
+  }
+  .file.is-boxed .file-name {
+    @apply rounded-md border-2 border-l-0;
+  }
+}
