@@ -18,9 +18,9 @@
         <a href="index.html" class="button is-link is-small" style="margin-bottom: 1rem;">← Volver al inicio</a>
         <h1 class="title is-1">Elements</h1>
 
-        <!-- Buttons -->
+        <!-- Botones: colores básicos -->
         <div class="demo-section">
-            <div class="demo-title">Botones (.button)</div>
+            <div class="demo-title">Botones - Colores (.button, .is-primary, etc.)</div>
             <div class="demo-row">
                 <button class="button">Normal</button>
                 <button class="button is-primary">Primary</button>
@@ -34,15 +34,89 @@
                 <button class="button is-white">White</button>
                 <button class="button is-black">Black</button>
             </div>
+        </div>
+
+        <!-- Botones: tamaños -->
+        <div class="demo-section">
+            <div class="demo-title">Tamaños (.is-small, .is-medium, .is-large)</div>
             <div class="demo-row">
-                <button class="button is-small">Small</button>
-                <button class="button">Normal</button>
-                <button class="button is-medium">Medium</button>
-                <button class="button is-large">Large</button>
+                <button class="button is-small is-primary">Small</button>
+                <button class="button is-primary">Normal</button>
+                <button class="button is-medium is-primary">Medium</button>
+                <button class="button is-large is-primary">Large</button>
             </div>
+        </div>
+
+        <!-- Botones: outlined -->
+        <div class="demo-section">
+            <div class="demo-title">Outlined (.is-outlined)</div>
             <div class="demo-row">
-                <button class="button is-primary is-outlined">Outlined</button>
+                <button class="button is-outlined">Outlined</button>
+                <button class="button is-outlined is-primary">Primary outlined</button>
+                <button class="button is-outlined is-danger">Danger outlined</button>
+                <button class="button is-outlined is-dark">Dark outlined</button>
+            </div>
+        </div>
+
+        <!-- Botones: inverted (texto color, fondo transparente, hover invierte) -->
+        <div class="demo-section">
+            <div class="demo-title">Inverted (.is-inverted)</div>
+            <div class="demo-row" style="background-color: #363636; padding: 1rem; border-radius: 8px;">
+                <button class="button is-inverted is-primary">Primary inverted</button>
+                <button class="button is-inverted is-link">Link inverted</button>
+                <button class="button is-inverted is-info">Info inverted</button>
+                <button class="button is-inverted is-danger">Danger inverted</button>
+                <button class="button is-inverted is-light">Light inverted</button>
+            </div>
+        </div>
+
+        <!-- Botones: rounded -->
+        <div class="demo-section">
+            <div class="demo-title">Redondeados (.is-rounded)</div>
+            <div class="demo-row">
+                <button class="button is-rounded">Rounded</button>
+                <button class="button is-rounded is-primary">Primary rounded</button>
+                <button class="button is-rounded is-success">Success rounded</button>
+                <button class="button is-rounded is-danger is-large">Large rounded danger</button>
+            </div>
+        </div>
+
+        <!-- Botones: fullwidth -->
+        <div class="demo-section">
+            <div class="demo-title">Ancho completo (.is-fullwidth)</div>
+            <div class="demo-row" style="flex-direction: column;">
+                <button class="button is-primary is-fullwidth">Fullwidth button</button>
+                <button class="button is-outlined is-fullwidth">Fullwidth outlined</button>
+            </div>
+        </div>
+
+        <!-- Botones: loading -->
+        <div class="demo-section">
+            <div class="demo-title">Estado de carga (.is-loading)</div>
+            <div class="demo-row">
                 <button class="button is-loading">Loading</button>
+                <button class="button is-primary is-loading">Primary loading</button>
+                <button class="button is-success is-loading is-medium">Medium loading</button>
+            </div>
+        </div>
+
+        <!-- Botones: disabled -->
+        <div class="demo-section">
+            <div class="demo-title">Deshabilitados (disabled o .is-disabled)</div>
+            <div class="demo-row">
+                <button class="button" disabled>Disabled</button>
+                <button class="button is-primary is-disabled">Disabled primary</button>
+                <button class="button is-outlined is-danger" disabled>Disabled outlined</button>
+            </div>
+        </div>
+
+        <!-- Botones: texto (.is-text) -->
+        <div class="demo-section">
+            <div class="demo-title">Botón texto (.is-text)</div>
+            <div class="demo-row">
+                <button class="button is-text">Text button</button>
+                <button class="button is-text is-primary">Primary text</button>
+                <button class="button is-text is-danger">Danger text</button>
             </div>
         </div>
 
@@ -58,10 +132,7 @@
             <div class="content">
                 <h1>Título h1</h1>
                 <p>Párrafo de ejemplo. <strong>Texto en negrita</strong> y <em>cursiva</em>.</p>
-                <ul>
-                    <li>Elemento de lista 1</li>
-                    <li>Elemento de lista 2</li>
-                </ul>
+                <ul><li>Elemento de lista 1</li><li>Elemento de lista 2</li></ul>
                 <blockquote>Esto es una cita en bloque.</blockquote>
             </div>
             <div class="content is-small">Contenido pequeño</div>
