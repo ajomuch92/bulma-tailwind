@@ -3,6 +3,12 @@
 Bulma CSS classes implemented with Tailwind CSS v4.
 You can use the classes you know from Bulma (.button, .card, .modal, .columns, etc.) but the style is generated with Tailwind v4 utilities.
 
+## Why?
+- To provide a familiar API for Bulma users while leveraging Tailwind's utility-first approach.
+
+## Demo
+You can see a [live demo](https://bulma-tailwind.pages.dev/) of the implemented classes in the `src/example` folder. It includes examples of elements, components, and form controls styled with Tailwind CSS.
+
 ## Installation
 
 ```bash
