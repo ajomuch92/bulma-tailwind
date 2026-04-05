@@ -1,0 +1,61 @@
+@layer components {
+  progress {
+    @apply appearance-none block w-full h-3 rounded-full overflow-hidden;
+  }
+  progress::-webkit-progress-bar {
+    @apply bg-grey-light rounded-full;
+  }
+  progress::-webkit-progress-value {
+    @apply bg-primary rounded-full transition-all;
+  }
+  progress::-moz-progress-bar {
+    @apply bg-primary rounded-full;
+  }
+  /* Tamaños */
+  progress.is-small {
+    @apply h-1.5;
+  }
+  progress.is-medium {
+    @apply h-4;
+  }
+  progress.is-large {
+    @apply h-6;
+  }
+  /* Colores */
+  progress.is-primary::-webkit-progress-value {
+    background-color: var(--color-primary);
+  }
+  progress.is-primary::-moz-progress-bar {
+    background-color: var(--color-primary);
+  }
+  progress.is-link::-webkit-progress-value {
+    background-color: var(--color-link);
+  }
+  progress.is-link::-moz-progress-bar {
+    background-color: var(--color-link);
+  }
+  progress.is-info::-webkit-progress-value {
+    background-color: var(--color-info);
+  }
+  progress.is-info::-moz-progress-bar {
+    background-color: var(--color-info);
+  }
+  progress.is-success::-webkit-progress-value {
+    background-color: var(--color-success);
+  }
+  progress.is-success::-moz-progress-bar {
+    background-color: var(--color-success);
+  }
+  progress.is-warning::-webkit-progress-value {
+    background-color: var(--color-warning);
+  }
+  progress.is-warning::-moz-progress-bar {
+    background-color: var(--color-warning);
+  }
+  progress.is-danger::-webkit-progress-value {
+    background-color: var(--color-danger);
+  }
+  progress.is-danger::-moz-progress-bar {
+    background-color: var(--color-danger);
+  }
+}

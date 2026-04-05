@@ -1,0 +1,39 @@
+@layer components {
+  .table {
+    @apply w-full bg-white border-collapse;
+  }
+  .table td,
+  .table th {
+    @apply border border-grey px-3 py-2 text-left align-top;
+  }
+  .table th {
+    @apply font-bold;
+  }
+  .table thead td,
+  .table thead th {
+    @apply border-b-2 border-grey-dark;
+  }
+  .table tfoot td,
+  .table tfoot th {
+    @apply border-t-2 border-grey-dark;
+  }
+  /* Modificadores */
+  .table.is-striped tbody tr:nth-child(even) {
+    @apply bg-grey-light/50;
+  }
+  .table.is-hoverable tbody tr:hover {
+    @apply bg-grey-light;
+  }
+  .table.is-bordered td,
+  .table.is-bordered th {
+    @apply border-2 border-grey;
+  }
+  .table.is-narrow td,
+  .table.is-narrow th {
+    @apply px-2 py-1;
+  }
+  /* Tamaños */
+  .table.is-fullwidth {
+    @apply w-full;
+  }
+}

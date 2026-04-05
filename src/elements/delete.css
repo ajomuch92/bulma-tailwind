@@ -1,0 +1,39 @@
+@layer components {
+  .delete {
+    @apply relative inline-flex items-center justify-center w-5 h-5 rounded-full bg-grey-dark text-white cursor-pointer transition-colors;
+  }
+  .delete::before,
+  .delete::after {
+    content: '';
+    @apply absolute w-3 h-0.5 bg-white rounded-full;
+    transform: rotate(45deg);
+  }
+  .delete::after {
+    transform: rotate(-45deg);
+  }
+  .delete:hover {
+    @apply bg-danger;
+  }
+  /* Tamaños */
+  .delete.is-small {
+    @apply w-4 h-4;
+  }
+  .delete.is-medium {
+    @apply w-6 h-6;
+  }
+  .delete.is-large {
+    @apply w-8 h-8;
+  }
+  .delete::before,
+  .delete::after {
+    @apply w-2 h-0.5;
+  }
+  .delete.is-medium::before,
+  .delete.is-medium::after {
+    @apply w-3.5;
+  }
+  .delete.is-large::before,
+  .delete.is-large::after {
+    @apply w-5;
+  }
+}

@@ -1,0 +1,46 @@
+@layer components {
+  .image {
+    @apply block relative;
+  }
+  .image img {
+    @apply block w-full h-auto;
+  }
+  /* Tamaños fijos (cuadrados) */
+  .image.is-16x16 { @apply w-4 h-4; }
+  .image.is-24x24 { @apply w-6 h-6; }
+  .image.is-32x32 { @apply w-8 h-8; }
+  .image.is-48x48 { @apply w-12 h-12; }
+  .image.is-64x64 { @apply w-16 h-16; }
+  .image.is-96x96 { @apply w-24 h-24; }
+  .image.is-128x128 { @apply w-32 h-32; }
+  
+  /* Ratios (padding-bottom trick) */
+  .image.is-square,
+  .image.is-1by1 {
+    @apply pt-[100%];
+  }
+  .image.is-4by3 {
+    @apply pt-[75%];
+  }
+  .image.is-3by2 {
+    @apply pt-[66.6667%];
+  }
+  .image.is-16by9 {
+    @apply pt-[56.25%];
+  }
+  .image.is-2by1 {
+    @apply pt-[50%];
+  }
+  .image.is-3by1 {
+    @apply pt-[33.3333%];
+  }
+  .image.is-square img,
+  .image.is-1by1 img,
+  .image.is-4by3 img,
+  .image.is-3by2 img,
+  .image.is-16by9 img,
+  .image.is-2by1 img,
+  .image.is-3by1 img {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+}

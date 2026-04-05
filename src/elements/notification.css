@@ -1,0 +1,46 @@
+@layer components {
+  .notification {
+    @apply p-4 rounded-lg text-dark;
+    background-color: var(--color-grey-light);
+  }
+  .notification:not(:last-child) {
+    @apply mb-4;
+  }
+  /* Colores */
+  .notification.is-primary {
+    background-color: var(--color-primary);
+    @apply text-white;
+  }
+  .notification.is-link {
+    background-color: var(--color-link);
+    @apply text-white;
+  }
+  .notification.is-info {
+    background-color: var(--color-info);
+    @apply text-white;
+  }
+  .notification.is-success {
+    background-color: var(--color-success);
+    @apply text-white;
+  }
+  .notification.is-warning {
+    background-color: var(--color-warning);
+    @apply text-dark;
+  }
+  .notification.is-danger {
+    background-color: var(--color-danger);
+    @apply text-white;
+  }
+  .notification.is-light {
+    background-color: var(--color-light);
+    @apply text-dark;
+  }
+  .notification.is-dark {
+    background-color: var(--color-dark);
+    @apply text-white;
+  }
+  /* Dentro de notificación puede haber delete */
+  .notification .delete {
+    @apply float-right;
+  }
+}

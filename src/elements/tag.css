@@ -1,0 +1,76 @@
+@layer components {
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-md px-3 py-1 text-sm font-medium bg-grey-light text-dark;
+  }
+  .tag:not(:last-child) {
+    @apply mr-1;
+  }
+  /* Colores */
+  .tag.is-primary {
+    background-color: var(--color-primary);
+    @apply text-white;
+  }
+  .tag.is-link {
+    background-color: var(--color-link);
+    @apply text-white;
+  }
+  .tag.is-info {
+    background-color: var(--color-info);
+    @apply text-white;
+  }
+  .tag.is-success {
+    background-color: var(--color-success);
+    @apply text-white;
+  }
+  .tag.is-warning {
+    background-color: var(--color-warning);
+    @apply text-dark;
+  }
+  .tag.is-danger {
+    background-color: var(--color-danger);
+    @apply text-white;
+  }
+  .tag.is-dark {
+    background-color: var(--color-dark);
+    @apply text-white;
+  }
+  .tag.is-light {
+    background-color: var(--color-light);
+    @apply text-dark;
+  }
+  .tag.is-white {
+    background-color: white;
+    @apply text-dark border border-grey;
+  }
+  .tag.is-black {
+    background-color: var(--color-black);
+    @apply text-white;
+  }
+  /* Tamaños */
+  .tag.is-small {
+    @apply text-xs px-2 py-0.5 rounded;
+  }
+  .tag.is-medium {
+    @apply text-base px-4 py-1.5 rounded-md;
+  }
+  .tag.is-large {
+    @apply text-lg px-5 py-2 rounded-lg;
+  }
+  /* Tag con delete */
+  .tag .delete {
+    @apply ml-1 w-3 h-3;
+  }
+  .tag.is-small .delete {
+    @apply w-2 h-2;
+  }
+  .tag.is-medium .delete {
+    @apply w-4 h-4;
+  }
+  .tag.is-large .delete {
+    @apply w-5 h-5;
+  }
+  /* Grupo de tags */
+  .tags {
+    @apply flex flex-wrap gap-2;
+  }
+}
