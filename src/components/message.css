@@ -1,7 +1,6 @@
 @layer components {
   .message {
-    @apply rounded-lg overflow-hidden mb-4;
-    background-color: var(--color-light);
+    @apply rounded-lg overflow-hidden mb-4 w-full;
   }
   .message-header {
     @apply px-4 py-2 font-bold;
@@ -9,10 +8,11 @@
     color: var(--color-white);
   }
   .message-body {
-    @apply p-4 border-l-4;
-    border-left-color: var(--color-dark);
+    @apply p-4;
+    border-left: 4px solid var(--color-dark);
+    background-color: var(--color-light);
   }
-  /* Colores */
+  /* Colores - todas las variantes */
   .message.is-primary .message-header {
     background-color: var(--color-primary);
   }
@@ -49,6 +49,19 @@
   }
   .message.is-danger .message-body {
     border-left-color: var(--color-danger);
+  }
+  .message.is-dark .message-header {
+    background-color: var(--color-dark);
+  }
+  .message.is-dark .message-body {
+    border-left-color: var(--color-dark);
+  }
+  .message.is-light .message-header {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  .message.is-light .message-body {
+    border-left-color: var(--color-light);
   }
   /* Tamaños */
   .message.is-small {

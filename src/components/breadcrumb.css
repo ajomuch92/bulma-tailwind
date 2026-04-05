@@ -13,7 +13,7 @@
     @apply text-primary cursor-default pointer-events-none;
   }
   .breadcrumb a {
-    @apply text-dark hover:text-primary transition-colors;
+    @apply text-dark hover:text-primary transition-colors cursor-pointer;
   }
   /* Separadores alternativos */
   .breadcrumb.has-arrow-separator li + li::before {

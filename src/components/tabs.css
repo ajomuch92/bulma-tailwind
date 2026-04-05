@@ -6,7 +6,7 @@
     @apply -mb-px;
   }
   .tabs li a {
-    @apply block px-4 py-2 border-b-2 border-transparent text-grey-dark hover:text-dark transition-colors;
+    @apply block px-4 py-2 border-b-2 border-transparent text-grey-dark hover:text-dark transition-colors cursor-pointer;
   }
   .tabs li.is-active a {
     @apply border-primary text-primary font-semibold;
@@ -28,7 +28,7 @@
   .tabs.is-large li a {
     @apply text-xl px-6 py-4;
   }
-  /* Estilo toggle (sin bordes) */
+  /* Estilo toggle */
   .tabs.is-toggle li a {
     @apply border border-grey rounded-t-md -mb-px;
   }

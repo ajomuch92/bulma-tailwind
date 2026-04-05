@@ -9,17 +9,17 @@
   .pagination-previous,
   .pagination-next,
   .pagination-ellipsis {
-    @apply inline-flex items-center justify-center min-w-8 h-8 px-2 rounded-md border border-grey bg-white text-dark hover:bg-grey-light transition-colors;
+    @apply inline-flex items-center justify-center min-w-8 h-8 px-2 rounded-md border border-grey bg-white text-dark hover:bg-grey-light transition-colors cursor-pointer;
   }
   .pagination-link.is-current {
-    @apply bg-primary text-white border-primary;
+    @apply bg-primary text-white border-primary cursor-default;
   }
   .pagination-previous,
   .pagination-next {
     @apply px-4;
   }
   .pagination-ellipsis {
-    @apply border-none bg-transparent;
+    @apply border-none bg-transparent cursor-default;
   }
   /* Tamaños */
   .pagination.is-small .pagination-link,

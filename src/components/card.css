@@ -3,7 +3,7 @@
     @apply bg-white rounded-lg shadow-md overflow-hidden;
   }
   .card-header {
-    @apply px-5 py-3 border-b border-grey font-bold text-lg;
+    @apply px-5 py-3 border-b border-grey font-bold text-lg cursor-pointer;
   }
   .card-content {
     @apply p-5;
@@ -12,6 +12,6 @@
     @apply px-5 py-3 border-t border-grey flex;
   }
   .card-footer-item {
-    @apply flex-1 text-center py-2 hover:bg-grey-light transition;
+    @apply flex-1 text-center py-2 hover:bg-grey-light transition cursor-pointer;
   }
 }
