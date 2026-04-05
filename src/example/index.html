@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulma Tailwind - Documentación visual</title>
+    <link rel="stylesheet" href="../dist/bulma-tailwind.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+        .docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .docs-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .docs-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .docs-header p {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .demo-card:hover {
+            transform: translateY(-4px);
+        }
+        .demo-card-header {
+            background: #00d1b2;
+            color: white;
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .demo-card-body {
+            padding: 1.5rem;
+        }
+        .demo-card-footer {
+            background: #f5f5f5;
+            padding: 0.75rem 1.5rem;
+            border-top: 1px solid #dbdbdb;
+        }
+        .demo-card-footer a {
+            color: #3273dc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #7a7a7a;
+            padding: 2rem;
+            border-top: 1px solid #dbdbdb;
+        }
+    </style>
+</head>
+<body>
+    <div class="docs-container">
+        <div class="docs-header">
+            <h1 class="title is-1">Bulma Tailwind</h1>
+            <p>Clases de Bulma implementadas con Tailwind CSS v4</p>
+            <p>Mini documentación visual de todos los componentes</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="demo-card">
+                <div class="demo-card-header">🎨 Elements</div>
+                <div class="demo-card-body">
+                    Botones, cajas, títulos, notificaciones, tablas, tags, iconos, imágenes, barras de progreso...
+                </div>
+                <div class="demo-card-footer">
+                    <a href="elements.html">Ver ejemplos →</a>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-card-header">🧩 Components</div>
+                <div class="demo-card-body">
+                    Cards, modales, menús, tabs, migas de pan, paginación, mensajes, dropdowns, navbar, panel...
+                </div>
+                <div class="demo-card-footer">
+                    <a href="components.html">Ver ejemplos →</a>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-card-header">📝 Formularios</div>
+                <div class="demo-card-body">
+                    Inputs, textareas, selects, checkboxes, radios, archivos, campos con iconos, tamaños...
+                </div>
+                <div class="demo-card-footer">
+                    <a href="form.html">Ver ejemplos →</a>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-card-header">📐 Layout</div>
+                <div class="demo-card-body">
+                    Sistema de columnas (grid), contenedor, hero, secciones, niveles (level)...
+                </div>
+                <div class="demo-card-footer">
+                    <a href="layout.html">Ver ejemplos →</a>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <div class="demo-card-header">🖼️ Otros</div>
+                <div class="demo-card-body">
+                    Media object (contenido multimedia) y footer.
+                </div>
+                <div class="demo-card-footer">
+                    <a href="misc.html">Ver ejemplos →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Bulma Tailwind - Usa las clases de Bulma con el motor de Tailwind CSS v4</p>
+            <p><a href="https://github.com/tuusuario/bulma-tailwind" style="color:#3273dc;">GitHub</a> | <a href="#" style="color:#3273dc;">Documentación completa</a></p>
+        </div>
+    </div>
+</body>
+</html>

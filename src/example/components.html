@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - Bulma Tailwind</title>
+    <link rel="stylesheet" href="../../dist/bulma-tailwind.css">
+    <style>
+        body { background: #fafafa; font-family: system-ui; margin: 0; padding: 2rem; }
+        .demo-section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .demo-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; border-left: 4px solid #485fc7; padding-left: 1rem; }
+        .demo-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+<div style="max-width: 1200px; margin: 0 auto;">
+    <a href="index.html" class="button is-link is-small">← Volver al inicio</a>
+    <h1 class="title is-1">Components</h1>
+
+    <!-- Breadcrumb -->
+    <div class="demo-section">
+        <div class="demo-title">Migas de pan (.breadcrumb)</div>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Documentación</a></li>
+                <li class="is-active"><a href="#">Components</a></li>
+            </ul>
+        </nav>
+        <nav class="breadcrumb has-arrow-separator is-centered">
+            <ul><li><a>Uno</a></li><li><a>Dos</a></li><li class="is-active"><a>Tres</a></li></ul>
+        </nav>
+    </div>
+
+    <!-- Card -->
+    <div class="demo-section">
+        <div class="demo-title">Tarjeta (.card)</div>
+        <div class="card" style="max-width: 300px;">
+            <div class="card-header"><p class="card-header-title">Título de la tarjeta</p></div>
+            <div class="card-content">Contenido de la tarjeta.</div>
+            <div class="card-footer"><a class="card-footer-item">Acción</a></div>
+        </div>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="demo-section">
+        <div class="demo-title">Desplegable (.dropdown)</div>
+        <div class="dropdown is-active">
+            <div class="dropdown-trigger"><button class="button">Dropdown</button></div>
+            <div class="dropdown-menu"><div class="dropdown-content"><a class="dropdown-item">Opción 1</a><a class="dropdown-item">Opción 2</a><hr class="dropdown-divider"><a class="dropdown-item">Otra</a></div></div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="demo-section">
+        <div class="demo-title">Menú lateral (.menu)</div>
+        <aside class="menu" style="max-width: 200px;">
+            <p class="menu-label">General</p>
+            <ul class="menu-list"><li><a class="is-active">Dashboard</a></li><li><a>Clientes</a></li></ul>
+            <p class="menu-label">Administración</p><ul class="menu-list"><li><a>Equipo</a></li></ul>
+        </aside>
+    </div>
+
+    <!-- Message -->
+    <div class="demo-section">
+        <div class="demo-title">Mensajes (.message)</div>
+        <div class="message is-info"><div class="message-header">Info</div><div class="message-body">Contenido del mensaje.</div></div>
+        <div class="message is-success"><div class="message-header">Éxito</div><div class="message-body">Operación correcta.</div></div>
+    </div>
+
+    <!-- Modal (simulado, sin activar por defecto) -->
+    <div class="demo-section">
+        <div class="demo-title">Modal (.modal)</div>
+        <button class="button is-primary" onclick="document.getElementById('demoModal').classList.add('is-active')">Abrir modal</button>
+        <div id="demoModal" class="modal">
+            <div class="modal-background" onclick="document.getElementById('demoModal').classList.remove('is-active')"></div>
+            <div class="modal-card"><div class="modal-card-head"><p class="modal-card-title">Título</p><button class="delete" onclick="document.getElementById('demoModal').classList.remove('is-active')"></button></div>
+            <div class="modal-card-body">Contenido del modal</div><div class="modal-card-foot"><button class="button">Cancelar</button><button class="button is-primary">Aceptar</button></div></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="demo-section">
+        <div class="demo-title">Barra de navegación (.navbar)</div>
+        <nav class="navbar"><div class="navbar-brand"><a class="navbar-item">BulmaTailwind</a><div class="navbar-burger">☰</div></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item">Inicio</a><a class="navbar-item">Docs</a></div></div></nav>
+    </div>
+
+    <!-- Pagination -->
+    <div class="demo-section">
+        <div class="demo-title">Paginación (.pagination)</div>
+        <nav class="pagination"><a class="pagination-previous">Anterior</a><a class="pagination-next">Siguiente</a><ul class="pagination-list"><li><a class="pagination-link is-current">1</a></li><li><a class="pagination-link">2</a></li><li><a class="pagination-ellipsis">…</a></li></ul></nav>
+    </div>
+
+    <!-- Panel -->
+    <div class="demo-section">
+        <div class="demo-title">Panel (.panel)</div>
+        <div class="panel" style="max-width: 300px;"><div class="panel-heading">Repositorios</div><div class="panel-block">Buscar...</div><a class="panel-block">bulma-tailwind</a><a class="panel-block">tailwind-css</a></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="demo-section">
+        <div class="demo-title">Pestañas (.tabs)</div>
+        <div class="tabs"><ul><li class="is-active"><a>Pestaña 1</a></li><li><a>Pestaña 2</a></li><li><a>Pestaña 3</a></li></ul></div>
+        <div class="tabs is-toggle"><ul><li class="is-active"><a>Activo</a></li><li><a>Inactivo</a></li></ul></div>
+    </div>
+</div>
+<script>
+    // cerrar modal si se hace clic fuera
+    document.querySelectorAll('.modal-background').forEach(bg => {
+        bg.addEventListener('click', function(e) { this.parentElement.classList.remove('is-active'); });
+    });
+</script>
+</body>
+</html>
