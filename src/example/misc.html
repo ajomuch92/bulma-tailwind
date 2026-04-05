@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +7,158 @@
     <link rel="stylesheet" href="../../dist/bulma-tailwind.css">
     <style>
         body { background: #fafafa; font-family: system-ui; margin: 0; padding: 2rem; }
-        .demo-section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .demo-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; border-left: 4px solid #f14668; padding-left: 1rem; }
+        .demo-section { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            margin-bottom: 2rem; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .demo-title { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin-bottom: 1rem; 
+            border-left: 4px solid #f14668; 
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #f14668;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #ef2e55;
+        }
+        .copy-btn.copied {
+            background: #48c78e;
+        }
+        .code-container {
+            display: none;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
 <div style="max-width: 900px; margin: 0 auto;">
-    <a href="index.html" class="button is-link is-small">← Volver al inicio</a>
+    <a href="index.html" class="button is-link is-small">← Back to home</a>
     <h1 class="title is-1">Media Object & Footer</h1>
 
-    <div class="demo-section">
-        <div class="demo-title">Media object (.media)</div>
+    <div class="demo-section" id="section-1">
+        <div class="demo-title">
+            <span>Media Object (.media)</span>
+            <button class="copy-btn" onclick="copyCode('section-1')">Copy code</button>
+        </div>
         <div class="media">
             <div class="media-left"><figure class="image is-64x64"><img src="https://placehold.co/64x64" alt="avatar"></figure></div>
             <div class="media-content">
-                <p><strong>Usuario123</strong> <small>hace 5 min</small></p>
-                <p>Este es un comentario usando el objeto media. Puede contener texto, imágenes y acciones.</p>
+                <p><strong>User123</strong> <small>5 min ago</small></p>
+                <p>This is a comment using the media object. It can contain text, images, and actions.</p>
                 <div class="media">
                     <div class="media-left"><figure class="image is-48x48"><img src="https://placehold.co/48x48" alt="avatar"></figure></div>
-                    <div class="media-content"><p><strong>Respuesta</strong> <br>Anidación de media object.</p></div>
+                    <div class="media-content"><p><strong>Reply</strong> <br>Nested media object.</p></div>
                 </div>
             </div>
             <div class="media-right"><button class="delete"></button></div>
         </div>
         <hr>
         <div class="media">
-            <div class="media-content"><input class="input" placeholder="Escribe un comentario..."></div>
-            <div class="media-right"><button class="button is-primary">Enviar</button></div>
+            <div class="media-content"><input class="input" placeholder="Write a comment..."></div>
+            <div class="media-right"><button class="button is-primary">Send</button></div>
+        </div>
+        <div class="code-container" id="code-section-1">
+            <pre>&lt;div class="media"&gt;
+  &lt;div class="media-left"&gt;
+    &lt;figure class="image is-64x64"&gt;
+      &lt;img src="https://placehold.co/64x64" alt="avatar"&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+  &lt;div class="media-content"&gt;
+    &lt;p&gt;&lt;strong&gt;User123&lt;/strong&gt; &lt;small&gt;5 min ago&lt;/small&gt;&lt;/p&gt;
+    &lt;p&gt;This is a comment using the media object.&lt;/p&gt;
+    &lt;div class="media"&gt;
+      &lt;div class="media-left"&gt;
+        &lt;figure class="image is-48x48"&gt;
+          &lt;img src="https://placehold.co/48x48" alt="avatar"&gt;
+        &lt;/figure&gt;
+      &lt;/div&gt;
+      &lt;div class="media-content"&gt;
+        &lt;p&gt;&lt;strong&gt;Reply&lt;/strong&gt; &lt;br&gt;Nested media object.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="media-right"&gt;
+    &lt;button class="delete"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class="media"&gt;
+  &lt;div class="media-content"&gt;
+    &lt;input class="input" placeholder="Write a comment..."&gt;
+  &lt;/div&gt;
+  &lt;div class="media-right"&gt;
+    &lt;button class="button is-primary"&gt;Send&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
         </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Footer (.footer)</div>
+    <div class="demo-section" id="section-2">
+        <div class="demo-title">
+            <span>Footer (.footer)</span>
+            <button class="copy-btn" onclick="copyCode('section-2')">Copy code</button>
+        </div>
         <div class="footer" style="margin-top: 0;">
-            <p>Este es el pie de página con clase .footer</p>
-            <p>© 2025 Bulma Tailwind - Todos los derechos reservados.</p>
+            <p>This is the footer with .footer class</p>
+            <p>© 2025 Bulma Tailwind - All rights reserved.</p>
+        </div>
+        <div class="code-container" id="code-section-2">
+            <pre>&lt;div class="footer"&gt;
+  &lt;p&gt;This is the footer with .footer class&lt;/p&gt;
+  &lt;p&gt;© 2025 Bulma Tailwind - All rights reserved.&lt;/p&gt;
+&lt;/div&gt;</pre>
         </div>
     </div>
 </div>
+
+<script>
+    function copyCode(sectionId) {
+        const codeElement = document.getElementById('code-' + sectionId);
+        const button = event.target;
+        const originalText = button.textContent;
+        
+        // Toggle code visibility
+        if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+            codeElement.style.display = 'block';
+        }
+        
+        // Copy to clipboard
+        const textToCopy = codeElement.querySelector('pre').textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 </body>
 </html>

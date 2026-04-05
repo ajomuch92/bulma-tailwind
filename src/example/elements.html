@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,68 @@
     <link rel="stylesheet" href="../../dist/bulma-tailwind.css">
     <style>
         body { background: #fafafa; font-family: system-ui; margin: 0; padding: 2rem; }
-        .demo-section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .demo-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; border-left: 4px solid #00d1b2; padding-left: 1rem; }
+        .demo-section { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            margin-bottom: 2rem; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .demo-title { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin-bottom: 1rem; 
+            border-left: 4px solid #00d1b2; 
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .demo-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem; }
         hr { margin: 1rem 0; }
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #00d1b2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #00b89c;
+        }
+        .copy-btn.copied {
+            background: #48c78e;
+        }
+        .code-container {
+            display: none;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
     <div style="max-width: 1200px; margin: 0 auto;">
-        <a href="index.html" class="button is-link is-small" style="margin-bottom: 1rem;">← Volver al inicio</a>
+        <a href="index.html" class="button is-link is-small" style="margin-bottom: 1rem;">← Back to home</a>
         <h1 class="title is-1">Elements</h1>
 
-        <!-- Botones: colores básicos -->
-        <div class="demo-section">
-            <div class="demo-title">Botones - Colores (.button, .is-primary, etc.)</div>
+        <!-- Buttons: basic colors -->
+        <div class="demo-section" id="section-1">
+            <div class="demo-title">
+                <span>Buttons - Colors (.button, .is-primary, etc.)</span>
+                <button class="copy-btn" onclick="copyCode('section-1')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button">Normal</button>
                 <button class="button is-primary">Primary</button>
@@ -34,33 +82,67 @@
                 <button class="button is-white">White</button>
                 <button class="button is-black">Black</button>
             </div>
+            <div class="code-container" id="code-section-1">
+                <pre>&lt;button class="button"&gt;Normal&lt;/button&gt;
+&lt;button class="button is-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="button is-link"&gt;Link&lt;/button&gt;
+&lt;button class="button is-info"&gt;Info&lt;/button&gt;
+&lt;button class="button is-success"&gt;Success&lt;/button&gt;
+&lt;button class="button is-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="button is-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="button is-light"&gt;Light&lt;/button&gt;
+&lt;button class="button is-dark"&gt;Dark&lt;/button&gt;
+&lt;button class="button is-white"&gt;White&lt;/button&gt;
+&lt;button class="button is-black"&gt;Black&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: tamaños -->
-        <div class="demo-section">
-            <div class="demo-title">Tamaños (.is-small, .is-medium, .is-large)</div>
+        <!-- Buttons: sizes -->
+        <div class="demo-section" id="section-2">
+            <div class="demo-title">
+                <span>Sizes (.is-small, .is-medium, .is-large)</span>
+                <button class="copy-btn" onclick="copyCode('section-2')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button is-small is-primary">Small</button>
                 <button class="button is-primary">Normal</button>
                 <button class="button is-medium is-primary">Medium</button>
                 <button class="button is-large is-primary">Large</button>
             </div>
+            <div class="code-container" id="code-section-2">
+                <pre>&lt;button class="button is-small is-primary"&gt;Small&lt;/button&gt;
+&lt;button class="button is-primary"&gt;Normal&lt;/button&gt;
+&lt;button class="button is-medium is-primary"&gt;Medium&lt;/button&gt;
+&lt;button class="button is-large is-primary"&gt;Large&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: outlined -->
-        <div class="demo-section">
-            <div class="demo-title">Outlined (.is-outlined)</div>
+        <!-- Buttons: outlined -->
+        <div class="demo-section" id="section-3">
+            <div class="demo-title">
+                <span>Outlined (.is-outlined)</span>
+                <button class="copy-btn" onclick="copyCode('section-3')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button is-outlined">Outlined</button>
                 <button class="button is-outlined is-primary">Primary outlined</button>
                 <button class="button is-outlined is-danger">Danger outlined</button>
                 <button class="button is-outlined is-dark">Dark outlined</button>
             </div>
+            <div class="code-container" id="code-section-3">
+                <pre>&lt;button class="button is-outlined"&gt;Outlined&lt;/button&gt;
+&lt;button class="button is-outlined is-primary"&gt;Primary outlined&lt;/button&gt;
+&lt;button class="button is-outlined is-danger"&gt;Danger outlined&lt;/button&gt;
+&lt;button class="button is-outlined is-dark"&gt;Dark outlined&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: inverted (texto color, fondo transparente, hover invierte) -->
-        <div class="demo-section">
-            <div class="demo-title">Inverted (.is-inverted)</div>
+        <!-- Buttons: inverted -->
+        <div class="demo-section" id="section-4">
+            <div class="demo-title">
+                <span>Inverted (.is-inverted)</span>
+                <button class="copy-btn" onclick="copyCode('section-4')">Copy code</button>
+            </div>
             <div class="demo-row" style="background-color: #363636; padding: 1rem; border-radius: 8px;">
                 <button class="button is-inverted is-primary">Primary inverted</button>
                 <button class="button is-inverted is-link">Link inverted</button>
@@ -68,151 +150,231 @@
                 <button class="button is-inverted is-danger">Danger inverted</button>
                 <button class="button is-inverted is-light">Light inverted</button>
             </div>
+            <div class="code-container" id="code-section-4">
+                <pre>&lt;button class="button is-inverted is-primary"&gt;Primary inverted&lt;/button&gt;
+&lt;button class="button is-inverted is-link"&gt;Link inverted&lt;/button&gt;
+&lt;button class="button is-inverted is-info"&gt;Info inverted&lt;/button&gt;
+&lt;button class="button is-inverted is-danger"&gt;Danger inverted&lt;/button&gt;
+&lt;button class="button is-inverted is-light"&gt;Light inverted&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: rounded -->
-        <div class="demo-section">
-            <div class="demo-title">Redondeados (.is-rounded)</div>
+        <!-- Buttons: rounded -->
+        <div class="demo-section" id="section-5">
+            <div class="demo-title">
+                <span>Rounded (.is-rounded)</span>
+                <button class="copy-btn" onclick="copyCode('section-5')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button is-rounded">Rounded</button>
                 <button class="button is-rounded is-primary">Primary rounded</button>
                 <button class="button is-rounded is-success">Success rounded</button>
                 <button class="button is-rounded is-danger is-large">Large rounded danger</button>
             </div>
+            <div class="code-container" id="code-section-5">
+                <pre>&lt;button class="button is-rounded"&gt;Rounded&lt;/button&gt;
+&lt;button class="button is-rounded is-primary"&gt;Primary rounded&lt;/button&gt;
+&lt;button class="button is-rounded is-success"&gt;Success rounded&lt;/button&gt;
+&lt;button class="button is-rounded is-danger is-large"&gt;Large rounded danger&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: fullwidth -->
-        <div class="demo-section">
-            <div class="demo-title">Ancho completo (.is-fullwidth)</div>
+        <!-- Buttons: fullwidth -->
+        <div class="demo-section" id="section-6">
+            <div class="demo-title">
+                <span>Full Width (.is-fullwidth)</span>
+                <button class="copy-btn" onclick="copyCode('section-6')">Copy code</button>
+            </div>
             <div class="demo-row" style="flex-direction: column;">
                 <button class="button is-primary is-fullwidth">Fullwidth button</button>
                 <button class="button is-outlined is-fullwidth">Fullwidth outlined</button>
             </div>
+            <div class="code-container" id="code-section-6">
+                <pre>&lt;button class="button is-primary is-fullwidth"&gt;Fullwidth button&lt;/button&gt;
+&lt;button class="button is-outlined is-fullwidth"&gt;Fullwidth outlined&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: loading -->
-        <div class="demo-section">
-            <div class="demo-title">Estado de carga (.is-loading)</div>
+        <!-- Buttons: loading -->
+        <div class="demo-section" id="section-7">
+            <div class="demo-title">
+                <span>Loading State (.is-loading)</span>
+                <button class="copy-btn" onclick="copyCode('section-7')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button is-loading">Loading</button>
                 <button class="button is-primary is-loading">Primary loading</button>
                 <button class="button is-success is-loading is-medium">Medium loading</button>
             </div>
+            <div class="code-container" id="code-section-7">
+                <pre>&lt;button class="button is-loading"&gt;Loading&lt;/button&gt;
+&lt;button class="button is-primary is-loading"&gt;Primary loading&lt;/button&gt;
+&lt;button class="button is-success is-loading is-medium"&gt;Medium loading&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: disabled -->
-        <div class="demo-section">
-            <div class="demo-title">Deshabilitados (disabled o .is-disabled)</div>
+        <!-- Buttons: disabled -->
+        <div class="demo-section" id="section-8">
+            <div class="demo-title">
+                <span>Disabled (disabled or .is-disabled)</span>
+                <button class="copy-btn" onclick="copyCode('section-8')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button" disabled>Disabled</button>
                 <button class="button is-primary is-disabled">Disabled primary</button>
                 <button class="button is-outlined is-danger" disabled>Disabled outlined</button>
             </div>
+            <div class="code-container" id="code-section-8">
+                <pre>&lt;button class="button" disabled&gt;Disabled&lt;/button&gt;
+&lt;button class="button is-primary is-disabled"&gt;Disabled primary&lt;/button&gt;
+&lt;button class="button is-outlined is-danger" disabled&gt;Disabled outlined&lt;/button&gt;</pre>
+            </div>
         </div>
 
-        <!-- Botones: texto (.is-text) -->
-        <div class="demo-section">
-            <div class="demo-title">Botón texto (.is-text)</div>
+        <!-- Buttons: text -->
+        <div class="demo-section" id="section-9">
+            <div class="demo-title">
+                <span>Text Button (.is-text)</span>
+                <button class="copy-btn" onclick="copyCode('section-9')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <button class="button is-text">Text button</button>
                 <button class="button is-text is-primary">Primary text</button>
                 <button class="button is-text is-danger">Danger text</button>
             </div>
+            <div class="code-container" id="code-section-9">
+                <pre>&lt;button class="button is-text"&gt;Text button&lt;/button&gt;
+&lt;button class="button is-text is-primary"&gt;Primary text&lt;/button&gt;
+&lt;button class="button is-text is-danger"&gt;Danger text&lt;/button&gt;</pre>
+            </div>
         </div>
 
         <!-- Box -->
-        <div class="demo-section">
-            <div class="demo-title">Caja (.box)</div>
-            <div class="box">Este es un contenido dentro de una caja con sombra y bordes.</div>
+        <div class="demo-section" id="section-10">
+            <div class="demo-title">
+                <span>Box (.box)</span>
+                <button class="copy-btn" onclick="copyCode('section-10')">Copy code</button>
+            </div>
+            <div class="box">This is content inside a box with shadow and borders.</div>
+            <div class="code-container" id="code-section-10">
+                <pre>&lt;div class="box"&gt;This is content inside a box with shadow and borders.&lt;/div&gt;</pre>
+            </div>
         </div>
 
         <!-- Content -->
-        <div class="demo-section">
-            <div class="demo-title">Contenido (.content)</div>
-            <div class="content">
-                <h1>Título h1</h1>
-                <p>Párrafo de ejemplo. <strong>Texto en negrita</strong> y <em>cursiva</em>.</p>
-                <ul><li>Elemento de lista 1</li><li>Elemento de lista 2</li></ul>
-                <blockquote>Esto es una cita en bloque.</blockquote>
+        <div class="demo-section" id="section-11">
+            <div class="demo-title">
+                <span>Content (.content)</span>
+                <button class="copy-btn" onclick="copyCode('section-11')">Copy code</button>
             </div>
-            <div class="content is-small">Contenido pequeño</div>
-            <div class="content is-large">Contenido grande</div>
+            <div class="content">
+                <h1>Heading h1</h1>
+                <p>Example paragraph. <strong>Bold text</strong> and <em>italic</em>.</p>
+                <ul><li>List item 1</li><li>List item 2</li></ul>
+                <blockquote>This is a blockquote.</blockquote>
+            </div>
+            <div class="content is-small">Small content</div>
+            <div class="content is-large">Large content</div>
+            <div class="code-container" id="code-section-11">
+                <pre>&lt;div class="content"&gt;
+  &lt;h1&gt;Heading h1&lt;/h1&gt;
+  &lt;p&gt;Example paragraph. &lt;strong&gt;Bold text&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt;.&lt;/p&gt;
+  &lt;ul&gt;&lt;li&gt;List item 1&lt;/li&gt;&lt;li&gt;List item 2&lt;/li&gt;&lt;/ul&gt;
+  &lt;blockquote&gt;This is a blockquote.&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="content is-small"&gt;Small content&lt;/div&gt;
+&lt;div class="content is-large"&gt;Large content&lt;/div&gt;</pre>
+            </div>
         </div>
 
         <!-- Delete -->
-        <div class="demo-section">
-            <div class="demo-title">Botón eliminar (.delete)</div>
+        <div class="demo-section" id="section-12">
+            <div class="demo-title">
+                <span>Delete Button (.delete)</span>
+                <button class="copy-btn" onclick="copyCode('section-12')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <div class="delete"></div>
                 <div class="delete is-small"></div>
                 <div class="delete is-medium"></div>
                 <div class="delete is-large"></div>
             </div>
+            <div class="code-container" id="code-section-12">
+                <pre>&lt;div class="delete"&gt;&lt;/div&gt;
+&lt;div class="delete is-small"&gt;&lt;/div&gt;
+&lt;div class="delete is-medium"&gt;&lt;/div&gt;
+&lt;div class="delete is-large"&gt;&lt;/div&gt;</pre>
+            </div>
         </div>
 
         <!-- Icon -->
-        <div class="demo-section">
-            <div class="demo-title">Iconos (.icon)</div>
+        <div class="demo-section" id="section-13">
+            <div class="demo-title">
+                <span>Icons (.icon)</span>
+                <button class="copy-btn" onclick="copyCode('section-13')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-                <span class="icon is-small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg></span>
-                <span class="icon is-medium"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg></span>
-                <span class="icon is-large"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg></span>
+                <span class="icon is-small">🔍</span>
+                <span class="icon is-medium">⭐</span>
+                <span class="icon is-large">❤️</span>
+            </div>
+            <div class="code-container" id="code-section-13">
+                <pre>&lt;span class="icon"&gt;&lt;svg ...&gt;...&lt;/svg&gt;&lt;/span&gt;
+&lt;span class="icon is-small"&gt;🔍&lt;/span&gt;
+&lt;span class="icon is-medium"&gt;⭐&lt;/span&gt;
+&lt;span class="icon is-large"&gt;❤️&lt;/span&gt;</pre>
             </div>
         </div>
 
         <!-- Image -->
-        <div class="demo-section">
-            <div class="demo-title">Imagen (.image)</div>
+        <div class="demo-section" id="section-14">
+            <div class="demo-title">
+                <span>Images (.image)</span>
+                <button class="copy-btn" onclick="copyCode('section-14')">Copy code</button>
+            </div>
             <div class="demo-row">
-                <figure class="image is-64x64"><img src="https://placehold.co/64x64" alt="placeholder"></figure>
-                <figure class="image is-128x128"><img src="https://placehold.co/128x128" alt="placeholder"></figure>
-                <figure class="image is-16by9" style="width: 200px;"><img src="https://placehold.co/200x112" alt=""></figure>
+                <figure class="image is-64x64"><img src="https://placehold.co/64x64" alt="64x64"></figure>
+                <figure class="image is-128x128"><img src="https://placehold.co/128x128" alt="128x128"></figure>
+            </div>
+            <div class="code-container" id="code-section-14">
+                <pre>&lt;figure class="image is-64x64"&gt;
+  &lt;img src="..." alt="64x64"&gt;
+&lt;/figure&gt;
+&lt;figure class="image is-128x128"&gt;
+  &lt;img src="..." alt="128x128"&gt;
+&lt;/figure&gt;</pre>
             </div>
         </div>
 
-        <!-- Notification - todas las variantes -->
-        <div class="demo-section">
-            <div class="demo-title">Notificaciones (.notification)</div>
-            <div class="demo-row" style="flex-direction: column; gap: 0.75rem;">
-                <div class="notification is-primary">Notificación primaria sólida</div>
-                <div class="notification is-link">Notificación link sólida</div>
-                <div class="notification is-info">Notificación info sólida</div>
-                <div class="notification is-success">Notificación éxito sólida</div>
-                <div class="notification is-warning">Notificación advertencia sólida</div>
-                <div class="notification is-danger">Notificación peligro sólida</div>
-                <div class="notification is-light">Notificación light sólida</div>
-                <div class="notification is-dark">Notificación dark sólida</div>
-                <div class="notification is-white">Notificación blanca con borde</div>
-                <div class="notification is-black">Notificación negra sólida</div>
+        <!-- Notification -->
+        <div class="demo-section" id="section-15">
+            <div class="demo-title">
+                <span>Notifications (.notification)</span>
+                <button class="copy-btn" onclick="copyCode('section-15')">Copy code</button>
             </div>
-            <div class="demo-title" style="margin-top: 1.5rem;">Variantes claras (.is-light)</div>
-            <div class="demo-row" style="flex-direction: column; gap: 0.75rem;">
-                <div class="notification is-primary is-light">Notificación primaria clara</div>
-                <div class="notification is-link is-light">Notificación link clara</div>
-                <div class="notification is-info is-light">Notificación info clara</div>
-                <div class="notification is-success is-light">Notificación éxito clara</div>
-                <div class="notification is-warning is-light">Notificación advertencia clara</div>
-                <div class="notification is-danger is-light">Notificación peligro clara</div>
-                <div class="notification is-dark is-light">Notificación dark clara</div>
-            </div>
-            <div class="demo-title" style="margin-top: 1.5rem;">Tamaños</div>
-            <div class="demo-row">
-                <div class="notification is-primary is-small">Pequeña</div>
-                <div class="notification is-primary">Normal</div>
-                <div class="notification is-primary is-medium">Mediana</div>
-                <div class="notification is-primary is-large">Grande</div>
-            </div>
-            <div class="demo-title" style="margin-top: 1.5rem;">Con botón eliminar</div>
-            <div class="notification is-info">
-                <button class="delete"></button>
-                Notificación con botón de cierre.
+            <div class="notification">Default notification</div>
+            <div class="notification is-primary">Primary notification</div>
+            <div class="notification is-info">Info notification</div>
+            <div class="notification is-success">Success notification</div>
+            <div class="notification is-warning">Warning notification</div>
+            <div class="notification is-danger">Danger notification</div>
+            <div class="code-container" id="code-section-15">
+                <pre>&lt;div class="notification"&gt;Default notification&lt;/div&gt;
+&lt;div class="notification is-primary"&gt;Primary notification&lt;/div&gt;
+&lt;div class="notification is-info"&gt;Info notification&lt;/div&gt;
+&lt;div class="notification is-success"&gt;Success notification&lt;/div&gt;
+&lt;div class="notification is-warning"&gt;Warning notification&lt;/div&gt;
+&lt;div class="notification is-danger"&gt;Danger notification&lt;/div&gt;</pre>
             </div>
         </div>
 
-         <!-- Progress - todas las variantes -->
-        <div class="demo-section">
-            <div class="demo-title">Barras de progreso (progress) - colores</div>
+        <!-- Progress -->
+        <div class="demo-section" id="section-16">
+            <div class="demo-title">
+                <span>Progress Bars (progress) - Colors</span>
+                <button class="copy-btn" onclick="copyCode('section-16')">Copy code</button>
+            </div>
             <div class="demo-row" style="flex-direction: column; gap: 1rem;">
                 <progress class="progress is-primary" value="45" max="100">45%</progress>
                 <progress class="progress is-link" value="55" max="100">55%</progress>
@@ -222,18 +384,29 @@
                 <progress class="progress is-danger" value="95" max="100">95%</progress>
                 <progress class="progress is-dark" value="30" max="100">30%</progress>
             </div>
-            <div class="demo-title" style="margin-top: 1rem;">Tamaños</div>
+            <div class="demo-title" style="margin-top: 1rem;">Sizes</div>
             <div class="demo-row" style="flex-direction: column; gap: 1rem;">
                 <progress class="progress is-small is-primary" value="30" max="100">30%</progress>
                 <progress class="progress is-primary" value="50" max="100">50%</progress>
                 <progress class="progress is-medium is-primary" value="70" max="100">70%</progress>
                 <progress class="progress is-large is-primary" value="90" max="100">90%</progress>
             </div>
+            <div class="code-container" id="code-section-16">
+                <pre>&lt;progress class="progress is-primary" value="45" max="100"&gt;45%&lt;/progress&gt;
+&lt;progress class="progress is-link" value="55" max="100"&gt;55%&lt;/progress&gt;
+&lt;progress class="progress is-info" value="65" max="100"&gt;65%&lt;/progress&gt;
+&lt;progress class="progress is-success" value="75" max="100"&gt;75%&lt;/progress&gt;
+&lt;progress class="progress is-warning" value="85" max="100"&gt;85%&lt;/progress&gt;
+&lt;progress class="progress is-danger" value="95" max="100"&gt;95%&lt;/progress&gt;</pre>
+            </div>
         </div>
 
-        <!-- Tag - todas las variantes -->
-        <div class="demo-section">
-            <div class="demo-title">Etiquetas (.tag) - colores sólidos</div>
+        <!-- Tags -->
+        <div class="demo-section" id="section-17">
+            <div class="demo-title">
+                <span>Tags (.tag) - Solid Colors</span>
+                <button class="copy-btn" onclick="copyCode('section-17')">Copy code</button>
+            </div>
             <div class="demo-row">
                 <span class="tag is-primary">Primary</span>
                 <span class="tag is-link">Link</span>
@@ -246,7 +419,7 @@
                 <span class="tag is-white">White</span>
                 <span class="tag is-black">Black</span>
             </div>
-            <div class="demo-title" style="margin-top: 1rem;">Variantes claras (.is-light)</div>
+            <div class="demo-title" style="margin-top: 1rem;">Light Variants (.is-light)</div>
             <div class="demo-row">
                 <span class="tag is-primary is-light">Primary light</span>
                 <span class="tag is-link is-light">Link light</span>
@@ -256,41 +429,54 @@
                 <span class="tag is-danger is-light">Danger light</span>
                 <span class="tag is-dark is-light">Dark light</span>
             </div>
-            <div class="demo-title" style="margin-top: 1rem;">Tamaños</div>
+            <div class="demo-title" style="margin-top: 1rem;">Sizes</div>
             <div class="demo-row">
                 <span class="tag is-primary is-small">Small</span>
                 <span class="tag is-primary">Normal</span>
                 <span class="tag is-primary is-medium">Medium</span>
                 <span class="tag is-primary is-large">Large</span>
             </div>
-            <div class="demo-title" style="margin-top: 1rem;">Con botón eliminar</div>
+            <div class="demo-title" style="margin-top: 1rem;">With Delete Button</div>
             <div class="demo-row">
-                <span class="tag is-info">Etiqueta <button class="delete is-small"></button></span>
-                <span class="tag is-danger is-medium">Eliminar <button class="delete is-small"></button></span>
+                <span class="tag is-info">Tag <button class="delete is-small"></button></span>
+                <span class="tag is-danger is-medium">Delete <button class="delete is-small"></button></span>
             </div>
-            <div class="demo-title" style="margin-top: 1rem;">Grupo de tags (.tags)</div>
+            <div class="demo-title" style="margin-top: 1rem;">Tag Groups (.tags)</div>
             <div class="tags">
-                <span class="tag">Uno</span>
-                <span class="tag is-primary">Dos</span>
-                <span class="tag is-danger">Tres</span>
+                <span class="tag">One</span>
+                <span class="tag is-primary">Two</span>
+                <span class="tag is-danger">Three</span>
             </div>
             <div class="tags has-addons" style="margin-top: 0.5rem;">
                 <span class="tag is-info">Info</span>
                 <span class="tag is-dark">23</span>
             </div>
+            <div class="code-container" id="code-section-17">
+                <pre>&lt;span class="tag is-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="tag is-primary is-light"&gt;Primary light&lt;/span&gt;
+&lt;span class="tag is-primary is-small"&gt;Small&lt;/span&gt;
+&lt;span class="tag is-info"&gt;Tag &lt;button class="delete is-small"&gt;&lt;/button&gt;&lt;/span&gt;
+&lt;div class="tags"&gt;
+  &lt;span class="tag"&gt;One&lt;/span&gt;
+  &lt;span class="tag is-primary"&gt;Two&lt;/span&gt;
+&lt;/div&gt;</pre>
+            </div>
         </div>
 
-        <!-- Table - todas las variantes -->
-        <div class="demo-section">
-            <div class="demo-title">Tablas (.table)</div>
-            <p>Tabla básica con borde, rayas y hover</p>
+        <!-- Table -->
+        <div class="demo-section" id="section-18">
+            <div class="demo-title">
+                <span>Tables (.table)</span>
+                <button class="copy-btn" onclick="copyCode('section-18')">Copy code</button>
+            </div>
+            <p>Basic table with borders, stripes and hover</p>
             <div class="table-container">
                 <table class="table is-striped is-hoverable is-bordered is-fullwidth">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                            <th>Ciudad</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -300,56 +486,67 @@
                             <td>Madrid</td>
                         </tr>
                         <tr class="is-primary">
-                            <td>Fila primaria (is-primary)</td>
+                            <td>Primary row (is-primary)</td>
                             <td>30</td>
                             <td>Barcelona</td>
                         </tr>
-                        <tr class="is-link">
-                            <td>Fila link</td>
-                            <td>22</td>
-                            <td>Valencia</td>
-                        </tr>
                         <tr class="is-info">
-                            <td>Fila info</td>
+                            <td>Info row</td>
                             <td>28</td>
                             <td>Sevilla</td>
                         </tr>
                         <tr class="is-success">
-                            <td>Fila success</td>
+                            <td>Success row</td>
                             <td>35</td>
                             <td>Bilbao</td>
                         </tr>
                         <tr class="is-warning">
-                            <td>Fila warning</td>
+                            <td>Warning row</td>
                             <td>40</td>
                             <td>Zaragoza</td>
                         </tr>
                         <tr class="is-danger">
-                            <td>Fila danger</td>
+                            <td>Danger row</td>
                             <td>19</td>
                             <td>Málaga</td>
-                        </tr>
-                        <tr class="is-light">
-                            <td>Fila light</td>
-                            <td>27</td>
-                            <td>Murcia</td>
-                        </tr>
-                        <tr class="is-dark">
-                            <td>Fila dark</td>
-                            <td>33</td>
-                            <td>Palma</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="help" style="margin-top: 0.5rem;">La tabla tiene <code>.table-container</code> para scroll horizontal en móviles, y modificadores <code>.is-striped</code>, <code>.is-hoverable</code>, <code>.is-bordered</code>, <code>.is-fullwidth</code>.</p>
-            <p class="help">También puedes aplicar colores a celdas individuales con <code>.is-primary</code>, <code>.is-danger</code>, etc. sobre <code>&lt;td&gt;</code> o <code>&lt;th&gt;</code>.</p>
+            <p class="help" style="margin-top: 0.5rem;">The table has <code>.table-container</code> for horizontal scroll on mobile, and modifiers <code>.is-striped</code>, <code>.is-hoverable</code>, <code>.is-bordered</code>, <code>.is-fullwidth</code>.</p>
+            <div class="code-container" id="code-section-18">
+                <pre>&lt;div class="table-container"&gt;
+  &lt;table class="table is-striped is-hoverable is-bordered is-fullwidth"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Ana&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;Madrid&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="is-primary"&gt;
+        &lt;td&gt;Primary row&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;Barcelona&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+            </div>
         </div>
 
-
         <!-- Title -->
-        <div class="demo-section">
-            <div class="demo-title">Títulos (.title, .subtitle)</div>
+        <div class="demo-section" id="section-19">
+            <div class="demo-title">
+                <span>Titles (.title, .subtitle)</span>
+                <button class="copy-btn" onclick="copyCode('section-19')">Copy code</button>
+            </div>
             <h1 class="title is-1">Title 1</h1>
             <h2 class="title is-2">Title 2</h2>
             <h3 class="title is-3">Title 3</h3>
@@ -363,7 +560,46 @@
             <h4 class="subtitle is-4">Subtitle 4</h4>
             <h5 class="subtitle is-5">Subtitle 5</h5>
             <h6 class="subtitle is-6">Subtitle 6</h6>
+            <div class="code-container" id="code-section-19">
+                <pre>&lt;h1 class="title is-1"&gt;Title 1&lt;/h1&gt;
+&lt;h2 class="title is-2"&gt;Title 2&lt;/h2&gt;
+&lt;h3 class="title is-3"&gt;Title 3&lt;/h3&gt;
+&lt;h4 class="title is-4"&gt;Title 4&lt;/h4&gt;
+&lt;h5 class="title is-5"&gt;Title 5&lt;/h5&gt;
+&lt;h6 class="title is-6"&gt;Title 6&lt;/h6&gt;
+
+&lt;h1 class="subtitle is-1"&gt;Subtitle 1&lt;/h1&gt;
+&lt;h2 class="subtitle is-2"&gt;Subtitle 2&lt;/h2&gt;
+&lt;h3 class="subtitle is-3"&gt;Subtitle 3&lt;/h3&gt;
+&lt;h4 class="subtitle is-4"&gt;Subtitle 4&lt;/h4&gt;
+&lt;h5 class="subtitle is-5"&gt;Subtitle 5&lt;/h5&gt;
+&lt;h6 class="subtitle is-6"&gt;Subtitle 6&lt;/h6&gt;</pre>
+            </div>
         </div>
     </div>
+
+    <script>
+        function copyCode(sectionId) {
+            const codeElement = document.getElementById('code-' + sectionId);
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // Toggle code visibility
+            if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+                codeElement.style.display = 'block';
+            }
+            
+            // Copy to clipboard
+            const textToCopy = codeElement.querySelector('pre').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +9,57 @@
         body { background: #fafafa; font-family: system-ui; margin: 0; }
         .demo-block { background: #eef3fc; border: 1px solid #cbd5e0; padding: 1rem; text-align: center; border-radius: 6px; margin: 0.5rem 0; }
         .hero-example { background: #00d1b2; color: white; }
+        .demo-section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #3273dc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+            float: right;
+        }
+        .copy-btn:hover {
+            background: #2366d1;
+        }
+        .copy-btn.copied {
+            background: #48c78e;
+        }
+        .code-container {
+            display: none;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow-x: auto;
+            clear: both;
+        }
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
 <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-    <a href="index.html" class="button is-link is-small">← Volver al inicio</a>
+    <a href="index.html" class="button is-link is-small">← Back to home</a>
     <h1 class="title is-1">Layout</h1>
 
     <!-- Columns (grid) -->
-    <div class="demo-section" style="background: white; padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
-        <h2 class="title is-4">Columnas (.columns / .column)</h2>
+    <div class="demo-section" id="section-1">
+        <h2 class="title is-4">Columns (.columns / .column) <button class="copy-btn" onclick="copyCode('section-1')">Copy code</button></h2>
         <div class="columns">
-            <div class="column"><div class="demo-block">Columna 1</div></div>
-            <div class="column"><div class="demo-block">Columna 2</div></div>
-            <div class="column"><div class="demo-block">Columna 3</div></div>
+            <div class="column"><div class="demo-block">Column 1</div></div>
+            <div class="column"><div class="demo-block">Column 2</div></div>
+            <div class="column"><div class="demo-block">Column 3</div></div>
         </div>
         <div class="columns">
             <div class="column is-3"><div class="demo-block">is-3</div></div>
@@ -32,41 +69,125 @@
         <div class="columns is-multiline">
             <div class="column is-4"><div class="demo-block">4</div></div><div class="column is-4"><div class="demo-block">4</div></div><div class="column is-4"><div class="demo-block">4</div></div>
         </div>
+        <div class="code-container" id="code-section-1">
+            <pre>&lt;div class="columns"&gt;
+  &lt;div class="column"&gt;&lt;div class="demo-block"&gt;Column 1&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column"&gt;&lt;div class="demo-block"&gt;Column 2&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column"&gt;&lt;div class="demo-block"&gt;Column 3&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="columns"&gt;
+  &lt;div class="column is-3"&gt;&lt;div class="demo-block"&gt;is-3&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column is-6"&gt;&lt;div class="demo-block"&gt;is-6&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column is-3"&gt;&lt;div class="demo-block"&gt;is-3&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="columns is-multiline"&gt;
+  &lt;div class="column is-4"&gt;&lt;div class="demo-block"&gt;4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column is-4"&gt;&lt;div class="demo-block"&gt;4&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="column is-4"&gt;&lt;div class="demo-block"&gt;4&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
     <!-- Container -->
-    <div class="demo-section" style="background: white; padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
-        <h2 class="title is-4">Contenedor (.container)</h2>
-        <div class="container" style="background: #f0f0f0; padding: 1rem;">Este contenido está centrado con márgenes automáticos.</div>
+    <div class="demo-section" id="section-2">
+        <h2 class="title is-4">Container (.container) <button class="copy-btn" onclick="copyCode('section-2')">Copy code</button></h2>
+        <div class="container" style="background: #f0f0f0; padding: 1rem;">This content is centered with automatic margins.</div>
+        <div class="code-container" id="code-section-2">
+            <pre>&lt;div class="container"&gt;
+  This content is centered with automatic margins.
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
     <!-- Hero -->
-    <div class="demo-section" style="margin-bottom: 2rem;">
-        <h2 class="title is-4">Hero (.hero)</h2>
-        <div class="hero hero-example"><div class="hero-body"><h1 class="title">Hero principal</h1><p class="subtitle">Subtítulo del hero</p></div></div>
-        <div class="hero is-medium hero-example" style="background: #485fc7;"><div class="hero-body"><h2 class="title">Hero mediano</h2></div></div>
+    <div class="demo-section" id="section-3">
+        <h2 class="title is-4">Hero (.hero) <button class="copy-btn" onclick="copyCode('section-3')">Copy code</button></h2>
+        <div class="hero hero-example"><div class="hero-body"><h1 class="title">Main Hero</h1><p class="subtitle">Hero subtitle</p></div></div>
+        <div class="hero is-medium hero-example" style="background: #485fc7;"><div class="hero-body"><h2 class="title">Medium Hero</h2></div></div>
+        <div class="code-container" id="code-section-3">
+            <pre>&lt;div class="hero"&gt;
+  &lt;div class="hero-body"&gt;
+    &lt;h1 class="title"&gt;Main Hero&lt;/h1&gt;
+    &lt;p class="subtitle"&gt;Hero subtitle&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="hero is-medium"&gt;
+  &lt;div class="hero-body"&gt;
+    &lt;h2 class="title"&gt;Medium Hero&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
     <!-- Section -->
-    <div class="demo-section" style="background: white; padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
-        <h2 class="title is-4">Sección (.section)</h2>
-        <div class="section" style="background: #f9f9f9; border: 1px solid #ddd;">Sección normal (padding vertical 3rem)</div>
-        <div class="section is-medium" style="background: #efefef; margin-top: 1rem;">Sección mediana</div>
+    <div class="demo-section" id="section-4">
+        <h2 class="title is-4">Section (.section) <button class="copy-btn" onclick="copyCode('section-4')">Copy code</button></h2>
+        <div class="section" style="background: #f9f9f9; border: 1px solid #ddd;">Normal section (3rem vertical padding)</div>
+        <div class="section is-medium" style="background: #efefef; margin-top: 1rem;">Medium section</div>
+        <div class="code-container" id="code-section-4">
+            <pre>&lt;div class="section"&gt;
+  Normal section (3rem vertical padding)
+&lt;/div&gt;
+&lt;div class="section is-medium"&gt;
+  Medium section
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
     <!-- Level -->
-    <div class="demo-section" style="background: white; padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
-        <h2 class="title is-4">Nivel (.level)</h2>
+    <div class="demo-section" id="section-5">
+        <h2 class="title is-4">Level (.level) <button class="copy-btn" onclick="copyCode('section-5')">Copy code</button></h2>
         <div class="level">
-            <div class="level-left"><div class="level-item"><strong>Izquierda</strong></div></div>
-            <div class="level-right"><div class="level-item"><button class="button is-primary">Acción</button></div></div>
+            <div class="level-left"><div class="level-item"><strong>Left</strong></div></div>
+            <div class="level-right"><div class="level-item"><button class="button is-primary">Action</button></div></div>
         </div>
         <div class="level is-mobile">
             <div class="level-item">Item 1</div>
             <div class="level-item">Item 2</div>
             <div class="level-item">Item 3</div>
         </div>
+        <div class="code-container" id="code-section-5">
+            <pre>&lt;div class="level"&gt;
+  &lt;div class="level-left"&gt;
+    &lt;div class="level-item"&gt;&lt;strong&gt;Left&lt;/strong&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="level-right"&gt;
+    &lt;div class="level-item"&gt;
+      &lt;button class="button is-primary"&gt;Action&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="level is-mobile"&gt;
+  &lt;div class="level-item"&gt;Item 1&lt;/div&gt;
+  &lt;div class="level-item"&gt;Item 2&lt;/div&gt;
+  &lt;div class="level-item"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 </div>
+
+<script>
+    function copyCode(sectionId) {
+        const codeElement = document.getElementById('code-' + sectionId);
+        const button = event.target;
+        const originalText = button.textContent;
+        
+        // Toggle code visibility
+        if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+            codeElement.style.display = 'block';
+        }
+        
+        // Copy to clipboard
+        const textToCopy = codeElement.querySelector('pre').textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 </body>
 </html>

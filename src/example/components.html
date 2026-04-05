@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,105 +7,332 @@
     <link rel="stylesheet" href="../../dist/bulma-tailwind.css">
     <style>
         body { background: #fafafa; font-family: system-ui; margin: 0; padding: 2rem; }
-        .demo-section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .demo-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; border-left: 4px solid #485fc7; padding-left: 1rem; }
+        .demo-section { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            margin-bottom: 2rem; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .demo-title { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin-bottom: 1rem; 
+            border-left: 4px solid #485fc7; 
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .demo-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #485fc7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #3e4db5;
+        }
+        .copy-btn.copied {
+            background: #48c78e;
+        }
+        .code-container {
+            display: none;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
 <div style="max-width: 1200px; margin: 0 auto;">
-    <a href="index.html" class="button is-link is-small">← Volver al inicio</a>
+    <a href="index.html" class="button is-link is-small">← Back to home</a>
     <h1 class="title is-1">Components</h1>
 
     <!-- Breadcrumb -->
-    <div class="demo-section">
-        <div class="demo-title">Migas de pan (.breadcrumb)</div>
+    <div class="demo-section" id="section-1">
+        <div class="demo-title">
+            <span>Breadcrumbs (.breadcrumb)</span>
+            <button class="copy-btn" onclick="copyCode('section-1')">Copy code</button>
+        </div>
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Documentación</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Documentation</a></li>
                 <li class="is-active"><a href="#">Components</a></li>
             </ul>
         </nav>
         <nav class="breadcrumb has-arrow-separator is-centered">
-            <ul><li><a>Uno</a></li><li><a>Dos</a></li><li class="is-active"><a>Tres</a></li></ul>
+            <ul><li><a>One</a></li><li><a>Two</a></li><li class="is-active"><a>Three</a></li></ul>
         </nav>
+        <div class="code-container" id="code-section-1">
+            <pre>&lt;nav class="breadcrumb" aria-label="breadcrumbs"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="is-active"&gt;&lt;a href="#"&gt;Components&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;nav class="breadcrumb has-arrow-separator is-centered"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a&gt;One&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Two&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="is-active"&gt;&lt;a&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+        </div>
     </div>
 
     <!-- Card -->
-    <div class="demo-section">
-        <div class="demo-title">Tarjeta (.card)</div>
+    <div class="demo-section" id="section-2">
+        <div class="demo-title">
+            <span>Card (.card)</span>
+            <button class="copy-btn" onclick="copyCode('section-2')">Copy code</button>
+        </div>
         <div class="card" style="max-width: 300px;">
-            <div class="card-header"><p class="card-header-title">Título de la tarjeta</p></div>
-            <div class="card-content">Contenido de la tarjeta.</div>
-            <div class="card-footer"><a class="card-footer-item">Acción</a></div>
+            <div class="card-header"><p class="card-header-title">Card Title</p></div>
+            <div class="card-content">Card content.</div>
+            <div class="card-footer"><a class="card-footer-item">Action</a></div>
+        </div>
+        <div class="code-container" id="code-section-2">
+            <pre>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;p class="card-header-title"&gt;Card Title&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-content"&gt;Card content.&lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    &lt;a class="card-footer-item"&gt;Action&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
         </div>
     </div>
 
     <!-- Dropdown -->
-    <div class="demo-section">
-        <div class="demo-title">Desplegable (.dropdown)</div>
+    <div class="demo-section" id="section-3">
+        <div class="demo-title">
+            <span>Dropdown (.dropdown)</span>
+            <button class="copy-btn" onclick="copyCode('section-3')">Copy code</button>
+        </div>
         <div class="dropdown is-active">
             <div class="dropdown-trigger"><button class="button">Dropdown</button></div>
-            <div class="dropdown-menu"><div class="dropdown-content"><a class="dropdown-item">Opción 1</a><a class="dropdown-item">Opción 2</a><hr class="dropdown-divider"><a class="dropdown-item">Otra</a></div></div>
+            <div class="dropdown-menu"><div class="dropdown-content"><a class="dropdown-item">Option 1</a><a class="dropdown-item">Option 2</a><hr class="dropdown-divider"><a class="dropdown-item">Another</a></div></div>
+        </div>
+        <div class="code-container" id="code-section-3">
+            <pre>&lt;div class="dropdown is-active"&gt;
+  &lt;div class="dropdown-trigger"&gt;
+    &lt;button class="button"&gt;Dropdown&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="dropdown-menu"&gt;
+    &lt;div class="dropdown-content"&gt;
+      &lt;a class="dropdown-item"&gt;Option 1&lt;/a&gt;
+      &lt;a class="dropdown-item"&gt;Option 2&lt;/a&gt;
+      &lt;hr class="dropdown-divider"&gt;
+      &lt;a class="dropdown-item"&gt;Another&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
         </div>
     </div>
 
     <!-- Menu -->
-    <div class="demo-section mt-5">
-        <div class="demo-title">Menú lateral (.menu)</div>
+    <div class="demo-section mt-5" id="section-4">
+        <div class="demo-title">
+            <span>Side Menu (.menu)</span>
+            <button class="copy-btn" onclick="copyCode('section-4')">Copy code</button>
+        </div>
         <aside class="menu" style="max-width: 200px;">
             <p class="menu-label">General</p>
-            <ul class="menu-list"><li><a class="is-active">Dashboard</a></li><li><a>Clientes</a></li></ul>
-            <p class="menu-label">Administración</p><ul class="menu-list"><li><a>Equipo</a></li></ul>
+            <ul class="menu-list"><li><a class="is-active">Dashboard</a></li><li><a>Customers</a></li></ul>
+            <p class="menu-label">Administration</p><ul class="menu-list"><li><a>Team</a></li></ul>
         </aside>
+        <div class="code-container" id="code-section-4">
+            <pre>&lt;aside class="menu"&gt;
+  &lt;p class="menu-label"&gt;General&lt;/p&gt;
+  &lt;ul class="menu-list"&gt;
+    &lt;li&gt;&lt;a class="is-active"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Customers&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p class="menu-label"&gt;Administration&lt;/p&gt;
+  &lt;ul class="menu-list"&gt;
+    &lt;li&gt;&lt;a&gt;Team&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</pre>
+        </div>
     </div>
 
     <!-- Message -->
-    <div class="demo-section">
-        <div class="demo-title">Mensajes (.message)</div>
-        <div class="message is-info"><div class="message-header">Info</div><div class="message-body">Contenido del mensaje.</div></div>
-        <div class="message is-success"><div class="message-header">Éxito</div><div class="message-body">Operación correcta.</div></div>
+    <div class="demo-section" id="section-5">
+        <div class="demo-title">
+            <span>Messages (.message)</span>
+            <button class="copy-btn" onclick="copyCode('section-5')">Copy code</button>
+        </div>
+        <div class="message is-info"><div class="message-header">Info</div><div class="message-body">Message content.</div></div>
+        <div class="message is-success"><div class="message-header">Success</div><div class="message-body">Operation successful.</div></div>
+        <div class="code-container" id="code-section-5">
+            <pre>&lt;div class="message is-info"&gt;
+  &lt;div class="message-header"&gt;Info&lt;/div&gt;
+  &lt;div class="message-body"&gt;Message content.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="message is-success"&gt;
+  &lt;div class="message-header"&gt;Success&lt;/div&gt;
+  &lt;div class="message-body"&gt;Operation successful.&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <!-- Modal (simulado, sin activar por defecto) -->
-    <div class="demo-section">
-        <div class="demo-title">Modal (.modal)</div>
-        <button class="button is-primary" onclick="document.getElementById('demoModal').classList.add('is-active')">Abrir modal</button>
+    <!-- Modal -->
+    <div class="demo-section" id="section-6">
+        <div class="demo-title">
+            <span>Modal (.modal)</span>
+            <button class="copy-btn" onclick="copyCode('section-6')">Copy code</button>
+        </div>
+        <button class="button is-primary" onclick="document.getElementById('demoModal').classList.add('is-active')">Open modal</button>
         <div id="demoModal" class="modal">
             <div class="modal-background" onclick="document.getElementById('demoModal').classList.remove('is-active')"></div>
-            <div class="modal-card"><div class="modal-card-head"><p class="modal-card-title">Título</p><button class="delete" onclick="document.getElementById('demoModal').classList.remove('is-active')"></button></div>
-            <div class="modal-card-body">Contenido del modal</div><div class="modal-card-foot"><button class="button">Cancelar</button><button class="button is-primary">Aceptar</button></div></div>
+            <div class="modal-card"><div class="modal-card-head"><p class="modal-card-title">Title</p><button class="delete" onclick="document.getElementById('demoModal').classList.remove('is-active')"></button></div>
+            <div class="modal-card-body">Modal content</div><div class="modal-card-foot"><button class="button">Cancel</button><button class="button is-primary">Accept</button></div></div>
+        </div>
+        <div class="code-container" id="code-section-6">
+            <pre>&lt;button class="button is-primary" onclick="..."&gt;Open modal&lt;/button&gt;
+&lt;div class="modal"&gt;
+  &lt;div class="modal-background"&gt;&lt;/div&gt;
+  &lt;div class="modal-card"&gt;
+    &lt;div class="modal-card-head"&gt;
+      &lt;p class="modal-card-title"&gt;Title&lt;/p&gt;
+      &lt;button class="delete"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-card-body"&gt;Modal content&lt;/div&gt;
+    &lt;div class="modal-card-foot"&gt;
+      &lt;button class="button"&gt;Cancel&lt;/button&gt;
+      &lt;button class="button is-primary"&gt;Accept&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
         </div>
     </div>
 
     <!-- Navbar -->
-    <div class="demo-section">
-        <div class="demo-title">Barra de navegación (.navbar)</div>
-        <nav class="navbar"><div class="navbar-brand"><a class="navbar-item">BulmaTailwind</a><div class="navbar-burger">☰</div></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item">Inicio</a><a class="navbar-item">Docs</a></div></div></nav>
+    <div class="demo-section" id="section-7">
+        <div class="demo-title">
+            <span>Navigation Bar (.navbar)</span>
+            <button class="copy-btn" onclick="copyCode('section-7')">Copy code</button>
+        </div>
+        <nav class="navbar"><div class="navbar-brand"><a class="navbar-item">BulmaTailwind</a><div class="navbar-burger">☰</div></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item">Home</a><a class="navbar-item">Docs</a></div></div></nav>
+        <div class="code-container" id="code-section-7">
+            <pre>&lt;nav class="navbar"&gt;
+  &lt;div class="navbar-brand"&gt;
+    &lt;a class="navbar-item"&gt;BulmaTailwind&lt;/a&gt;
+    &lt;div class="navbar-burger"&gt;☰&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar-menu"&gt;
+    &lt;div class="navbar-start"&gt;
+      &lt;a class="navbar-item"&gt;Home&lt;/a&gt;
+      &lt;a class="navbar-item"&gt;Docs&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</pre>
+        </div>
     </div>
 
     <!-- Pagination -->
-    <div class="demo-section">
-        <div class="demo-title">Paginación (.pagination)</div>
-        <nav class="pagination"><a class="pagination-previous">Anterior</a><a class="pagination-next">Siguiente</a><ul class="pagination-list"><li><a class="pagination-link is-current">1</a></li><li><a class="pagination-link">2</a></li><li><a class="pagination-ellipsis">…</a></li></ul></nav>
+    <div class="demo-section" id="section-8">
+        <div class="demo-title">
+            <span>Pagination (.pagination)</span>
+            <button class="copy-btn" onclick="copyCode('section-8')">Copy code</button>
+        </div>
+        <nav class="pagination"><a class="pagination-previous">Previous</a><a class="pagination-next">Next</a><ul class="pagination-list"><li><a class="pagination-link is-current">1</a></li><li><a class="pagination-link">2</a></li><li><a class="pagination-ellipsis">…</a></li></ul></nav>
+        <div class="code-container" id="code-section-8">
+            <pre>&lt;nav class="pagination"&gt;
+  &lt;a class="pagination-previous"&gt;Previous&lt;/a&gt;
+  &lt;a class="pagination-next"&gt;Next&lt;/a&gt;
+  &lt;ul class="pagination-list"&gt;
+    &lt;li&gt;&lt;a class="pagination-link is-current"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="pagination-link"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="pagination-ellipsis"&gt;…&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+        </div>
     </div>
 
     <!-- Panel -->
-    <div class="demo-section">
-        <div class="demo-title">Panel (.panel)</div>
-        <div class="panel" style="max-width: 300px;"><div class="panel-heading">Repositorios</div><div class="panel-block">Buscar...</div><a class="panel-block">bulma-tailwind</a><a class="panel-block">tailwind-css</a></div>
+    <div class="demo-section" id="section-9">
+        <div class="demo-title">
+            <span>Panel (.panel)</span>
+            <button class="copy-btn" onclick="copyCode('section-9')">Copy code</button>
+        </div>
+        <div class="panel" style="max-width: 300px;"><div class="panel-heading">Repositories</div><div class="panel-block">Search...</div><a class="panel-block">bulma-tailwind</a><a class="panel-block">tailwind-css</a></div>
+        <div class="code-container" id="code-section-9">
+            <pre>&lt;div class="panel"&gt;
+  &lt;div class="panel-heading"&gt;Repositories&lt;/div&gt;
+  &lt;div class="panel-block"&gt;Search...&lt;/div&gt;
+  &lt;a class="panel-block"&gt;bulma-tailwind&lt;/a&gt;
+  &lt;a class="panel-block"&gt;tailwind-css&lt;/a&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
     <!-- Tabs -->
-    <div class="demo-section">
-        <div class="demo-title">Pestañas (.tabs)</div>
-        <div class="tabs"><ul><li class="is-active"><a>Pestaña 1</a></li><li><a>Pestaña 2</a></li><li><a>Pestaña 3</a></li></ul></div>
-        <div class="tabs is-toggle"><ul><li class="is-active"><a>Activo</a></li><li><a>Inactivo</a></li></ul></div>
+    <div class="demo-section" id="section-10">
+        <div class="demo-title">
+            <span>Tabs (.tabs)</span>
+            <button class="copy-btn" onclick="copyCode('section-10')">Copy code</button>
+        </div>
+        <div class="tabs"><ul><li class="is-active"><a>Tab 1</a></li><li><a>Tab 2</a></li><li><a>Tab 3</a></li></ul></div>
+        <div class="tabs is-toggle"><ul><li class="is-active"><a>Active</a></li><li><a>Inactive</a></li></ul></div>
+        <div class="code-container" id="code-section-10">
+            <pre>&lt;div class="tabs"&gt;
+  &lt;ul&gt;
+    &lt;li class="is-active"&gt;&lt;a&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="tabs is-toggle"&gt;
+  &lt;ul&gt;
+    &lt;li class="is-active"&gt;&lt;a&gt;Active&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Inactive&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 </div>
+
 <script>
-    // cerrar modal si se hace clic fuera
+    function copyCode(sectionId) {
+        const codeElement = document.getElementById('code-' + sectionId);
+        const button = event.target;
+        const originalText = button.textContent;
+        
+        // Toggle code visibility
+        if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+            codeElement.style.display = 'block';
+        }
+        
+        // Copy to clipboard
+        const textToCopy = codeElement.querySelector('pre').textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    // Close modal when clicking outside
     document.querySelectorAll('.modal-background').forEach(bg => {
         bg.addEventListener('click', function(e) { this.parentElement.classList.remove('is-active'); });
     });

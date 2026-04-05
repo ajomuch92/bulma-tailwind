@@ -1,69 +1,262 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularios - Bulma Tailwind</title>
+    <title>Forms - Bulma Tailwind</title>
     <link rel="stylesheet" href="../../dist/bulma-tailwind.css">
     <style>
         body { background: #fafafa; font-family: system-ui; margin: 0; padding: 2rem; }
-        .demo-section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .demo-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; border-left: 4px solid #48c78e; padding-left: 1rem; }
+        .demo-section { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            margin-bottom: 2rem; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .demo-title { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            margin-bottom: 1rem; 
+            border-left: 4px solid #48c78e; 
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: #48c78e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #3abb81;
+        }
+        .copy-btn.copied {
+            background: #00d1b2;
+        }
+        .code-container {
+            display: none;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
 <div style="max-width: 800px; margin: 0 auto;">
-    <a href="index.html" class="button is-link is-small">← Volver al inicio</a>
-    <h1 class="title is-1">Formularios</h1>
+    <a href="index.html" class="button is-link is-small">← Back to home</a>
+    <h1 class="title is-1">Forms</h1>
 
-    <div class="demo-section">
-        <div class="demo-title">Campos básicos (.field, .label, .control)</div>
+    <div class="demo-section" id="section-1">
+        <div class="demo-title">
+            <span>Basic Fields (.field, .label, .control)</span>
+            <button class="copy-btn" onclick="copyCode('section-1')">Copy code</button>
+        </div>
         <div class="field">
-            <label class="label">Nombre</label>
-            <div class="control"><input class="input" type="text" placeholder="Tu nombre"></div>
-            <p class="help is-primary">Este es un texto de ayuda</p>
+            <label class="label">Name</label>
+            <div class="control"><input class="input" type="text" placeholder="Your name"></div>
+            <p class="help is-primary">This is help text</p>
         </div>
         <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-left"><input class="input" type="email" placeholder="Email"><span class="icon is-small">✉️</span></div>
         </div>
+        <div class="code-container" id="code-section-1">
+            <pre>&lt;div class="field"&gt;
+  &lt;label class="label"&gt;Name&lt;/label&gt;
+  &lt;div class="control"&gt;
+    &lt;input class="input" type="text" placeholder="Your name"&gt;
+  &lt;/div&gt;
+  &lt;p class="help is-primary"&gt;This is help text&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="field"&gt;
+  &lt;label class="label"&gt;Email&lt;/label&gt;
+  &lt;div class="control has-icons-left"&gt;
+    &lt;input class="input" type="email" placeholder="Email"&gt;
+    &lt;span class="icon is-small"&gt;✉️&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Textarea</div>
-        <div class="field"><label class="label">Comentarios</label><div class="control"><textarea class="textarea" placeholder="Escribe aquí..."></textarea></div></div>
-        <div class="field"><textarea class="textarea is-small" placeholder="Pequeño"></textarea></div>
+    <div class="demo-section" id="section-2">
+        <div class="demo-title">
+            <span>Textarea</span>
+            <button class="copy-btn" onclick="copyCode('section-2')">Copy code</button>
+        </div>
+        <div class="field"><label class="label">Comments</label><div class="control"><textarea class="textarea" placeholder="Write here..."></textarea></div></div>
+        <div class="field"><textarea class="textarea is-small" placeholder="Small"></textarea></div>
+        <div class="code-container" id="code-section-2">
+            <pre>&lt;div class="field"&gt;
+  &lt;label class="label"&gt;Comments&lt;/label&gt;
+  &lt;div class="control"&gt;
+    &lt;textarea class="textarea" placeholder="Write here..."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="field"&gt;
+  &lt;textarea class="textarea is-small" placeholder="Small"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Select</div>
-        <div class="field"><div class="select"><select><option>Opción 1</option><option>Opción 2</option></select></div></div>
-        <div class="field"><div class="select is-primary"><select><option>Select primario</option></select></div></div>
+    <div class="demo-section" id="section-3">
+        <div class="demo-title">
+            <span>Select</span>
+            <button class="copy-btn" onclick="copyCode('section-3')">Copy code</button>
+        </div>
+        <div class="field"><div class="select"><select><option>Option 1</option><option>Option 2</option></select></div></div>
+        <div class="field"><div class="select is-primary"><select><option>Primary select</option></select></div></div>
+        <div class="code-container" id="code-section-3">
+            <pre>&lt;div class="field"&gt;
+  &lt;div class="select"&gt;
+    &lt;select&gt;
+      &lt;option&gt;Option 1&lt;/option&gt;
+      &lt;option&gt;Option 2&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="field"&gt;
+  &lt;div class="select is-primary"&gt;
+    &lt;select&gt;&lt;option&gt;Primary select&lt;/option&gt;&lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Checkbox y Radio</div>
-        <div class="field"><label class="checkbox"><input type="checkbox"> Acepto términos</label></div>
-        <div class="field"><label class="radio"><input type="radio" name="gender"> Masculino</label><label class="radio"><input type="radio" name="gender"> Femenino</label></div>
+    <div class="demo-section" id="section-4">
+        <div class="demo-title">
+            <span>Checkbox and Radio</span>
+            <button class="copy-btn" onclick="copyCode('section-4')">Copy code</button>
+        </div>
+        <div class="field"><label class="checkbox"><input type="checkbox"> I accept terms</label></div>
+        <div class="field"><label class="radio"><input type="radio" name="gender"> Male</label><label class="radio"><input type="radio" name="gender"> Female</label></div>
+        <div class="code-container" id="code-section-4">
+            <pre>&lt;div class="field"&gt;
+  &lt;label class="checkbox"&gt;
+    &lt;input type="checkbox"&gt; I accept terms
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="field"&gt;
+  &lt;label class="radio"&gt;
+    &lt;input type="radio" name="gender"&gt; Male
+  &lt;/label&gt;
+  &lt;label class="radio"&gt;
+    &lt;input type="radio" name="gender"&gt; Female
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Archivo (.file)</div>
-        <div class="file"><label class="file-label"><input class="file-input" type="file"><span class="file-cta">Elegir archivo</span><span class="file-name">Ninguno seleccionado</span></label></div>
-        <div class="file is-primary is-small"><label class="file-label"><input class="file-input" type="file"><span class="file-cta">Subir</span><span class="file-name">avatar.png</span></label></div>
+    <div class="demo-section" id="section-5">
+        <div class="demo-title">
+            <span>File (.file)</span>
+            <button class="copy-btn" onclick="copyCode('section-5')">Copy code</button>
+        </div>
+        <div class="file"><label class="file-label"><input class="file-input" type="file"><span class="file-cta">Choose file</span><span class="file-name">No file selected</span></label></div>
+        <div class="file is-primary is-small"><label class="file-label"><input class="file-input" type="file"><span class="file-cta">Upload</span><span class="file-name">avatar.png</span></label></div>
+        <div class="code-container" id="code-section-5">
+            <pre>&lt;div class="file"&gt;
+  &lt;label class="file-label"&gt;
+    &lt;input class="file-input" type="file"&gt;
+    &lt;span class="file-cta"&gt;Choose file&lt;/span&gt;
+    &lt;span class="file-name"&gt;No file selected&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="file is-primary is-small"&gt;
+  &lt;label class="file-label"&gt;
+    &lt;input class="file-input" type="file"&gt;
+    &lt;span class="file-cta"&gt;Upload&lt;/span&gt;
+    &lt;span class="file-name"&gt;avatar.png&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Grupos y addons</div>
-        <div class="field is-grouped"><div class="control"><input class="input" placeholder="Buscar"></div><div class="control"><button class="button is-primary">Buscar</button></div></div>
-        <div class="field has-addons"><div class="control"><input class="input" placeholder="Cantidad"></div><div class="control"><button class="button">+</button></div></div>
+    <div class="demo-section" id="section-6">
+        <div class="demo-title">
+            <span>Groups and Addons</span>
+            <button class="copy-btn" onclick="copyCode('section-6')">Copy code</button>
+        </div>
+        <div class="field is-grouped"><div class="control"><input class="input" placeholder="Search"></div><div class="control"><button class="button is-primary">Search</button></div></div>
+        <div class="field has-addons"><div class="control"><input class="input" placeholder="Amount"></div><div class="control"><button class="button">+</button></div></div>
+        <div class="code-container" id="code-section-6">
+            <pre>&lt;div class="field is-grouped"&gt;
+  &lt;div class="control"&gt;
+    &lt;input class="input" placeholder="Search"&gt;
+  &lt;/div&gt;
+  &lt;div class="control"&gt;
+    &lt;button class="button is-primary"&gt;Search&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="field has-addons"&gt;
+  &lt;div class="control"&gt;
+    &lt;input class="input" placeholder="Amount"&gt;
+  &lt;/div&gt;
+  &lt;div class="control"&gt;
+    &lt;button class="button"&gt;+&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 
-    <div class="demo-section">
-        <div class="demo-title">Estados de carga e íconos</div>
-        <div class="field"><div class="control is-loading"><input class="input" value="Cargando..."></div></div>
+    <div class="demo-section" id="section-7">
+        <div class="demo-title">
+            <span>Loading States and Icons</span>
+            <button class="copy-btn" onclick="copyCode('section-7')">Copy code</button>
+        </div>
+        <div class="field"><div class="control is-loading"><input class="input" value="Loading..."></div></div>
         <div class="field"><div class="control has-icons-right"><input class="input is-danger" value="Error"><span class="icon">⚠️</span></div></div>
+        <div class="code-container" id="code-section-7">
+            <pre>&lt;div class="field"&gt;
+  &lt;div class="control is-loading"&gt;
+    &lt;input class="input" value="Loading..."&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="field"&gt;
+  &lt;div class="control has-icons-right"&gt;
+    &lt;input class="input is-danger" value="Error"&gt;
+    &lt;span class="icon"&gt;⚠️&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
     </div>
 </div>
+
+<script>
+    function copyCode(sectionId) {
+        const codeElement = document.getElementById('code-' + sectionId);
+        const button = event.target;
+        const originalText = button.textContent;
+        
+        // Toggle code visibility
+        if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+            codeElement.style.display = 'block';
+        }
+        
+        // Copy to clipboard
+        const textToCopy = codeElement.querySelector('pre').textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 </body>
 </html>
