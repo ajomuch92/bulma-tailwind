@@ -1,10 +1,11 @@
 @layer components {
+  /* Botón base */
   .button {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded font-medium transition-all duration-200 cursor-pointer border border-transparent;
     font-size: var(--text-size-normal);
   }
-  
-  /* Sizes */
+
+  /* Tamaños */
   .button.is-small {
     @apply px-2 py-1 text-sm rounded-sm;
   }
@@ -14,8 +15,8 @@
   .button.is-large {
     @apply px-6 py-3 text-lg;
   }
-  
-  /* Colors */
+
+  /* Colores sólidos */
   .button.is-primary {
     @apply bg-primary text-white hover:bg-primary/90;
   }
@@ -46,14 +47,88 @@
   .button.is-black {
     @apply bg-black text-white hover:bg-black/90;
   }
-  
-  /* States */
+
+  /* Outlined (solo borde y texto, sin fondo) */
   .button.is-outlined {
     @apply bg-transparent border-current;
   }
   .button.is-outlined.is-primary {
     @apply text-primary border-primary hover:bg-primary/10;
   }
+  .button.is-outlined.is-link {
+    @apply text-link border-link hover:bg-link/10;
+  }
+  .button.is-outlined.is-info {
+    @apply text-info border-info hover:bg-info/10;
+  }
+  .button.is-outlined.is-success {
+    @apply text-success border-success hover:bg-success/10;
+  }
+  .button.is-outlined.is-warning {
+    @apply text-warning border-warning hover:bg-warning/10;
+  }
+  .button.is-outlined.is-danger {
+    @apply text-danger border-danger hover:bg-danger/10;
+  }
+  .button.is-outlined.is-light {
+    @apply text-light border-light hover:bg-light/10;
+  }
+  .button.is-outlined.is-dark {
+    @apply text-dark border-dark hover:bg-dark/10;
+  }
+  .button.is-outlined.is-white {
+    @apply text-white border-white hover:bg-white/10;
+  }
+  .button.is-outlined.is-black {
+    @apply text-black border-black hover:bg-black/10;
+  }
+
+  /* Inverted (texto del color, fondo transparente, borde transparente, hover invierte) */
+  .button.is-inverted {
+    @apply bg-transparent border-transparent;
+  }
+  .button.is-inverted.is-primary {
+    @apply text-primary hover:bg-primary hover:text-white;
+  }
+  .button.is-inverted.is-link {
+    @apply text-link hover:bg-link hover:text-white;
+  }
+  .button.is-inverted.is-info {
+    @apply text-info hover:bg-info hover:text-white;
+  }
+  .button.is-inverted.is-success {
+    @apply text-success hover:bg-success hover:text-white;
+  }
+  .button.is-inverted.is-warning {
+    @apply text-warning hover:bg-warning hover:text-dark;
+  }
+  .button.is-inverted.is-danger {
+    @apply text-danger hover:bg-danger hover:text-white;
+  }
+  .button.is-inverted.is-light {
+    @apply text-light hover:bg-light hover:text-dark;
+  }
+  .button.is-inverted.is-dark {
+    @apply text-dark hover:bg-dark hover:text-white;
+  }
+  .button.is-inverted.is-white {
+    @apply text-white hover:bg-white hover:text-dark;
+  }
+  .button.is-inverted.is-black {
+    @apply text-black hover:bg-black hover:text-white;
+  }
+
+  /* Rounded (bordes redondeados grandes) */
+  .button.is-rounded {
+    @apply rounded-full;
+  }
+
+  /* Fullwidth (ancho completo) */
+  .button.is-fullwidth {
+    @apply w-full;
+  }
+
+  /* Loading (estado de carga) */
   .button.is-loading {
     @apply relative text-transparent pointer-events-none;
   }
@@ -61,5 +136,34 @@
     content: "";
     @apply absolute w-4 h-4 border-2 border-t-transparent rounded-full animate-spin;
     border-color: currentColor transparent transparent transparent;
+  }
+
+  /* Disabled (deshabilitado) */
+  .button:disabled,
+  .button.is-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  /* Text button (estilo texto sin bordes) */
+  .button.is-text {
+    @apply bg-transparent border-transparent text-dark hover:bg-grey-light;
+  }
+  .button.is-text.is-primary {
+    @apply text-primary hover:bg-primary/10;
+  }
+  .button.is-text.is-link {
+    @apply text-link hover:bg-link/10;
+  }
+  .button.is-text.is-info {
+    @apply text-info hover:bg-info/10;
+  }
+  .button.is-text.is-success {
+    @apply text-success hover:bg-success/10;
+  }
+  .button.is-text.is-warning {
+    @apply text-warning hover:bg-warning/10;
+  }
+  .button.is-text.is-danger {
+    @apply text-danger hover:bg-danger/10;
   }
 }
