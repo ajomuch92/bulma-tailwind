@@ -4,10 +4,13 @@
   "main": "dist/bulma-tailwind.css",
   "style": "dist/bulma-tailwind.css",
   "scripts": {
-    "build": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css",
+    "build": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css && copyfiles dist/bulma-tailwind.css src/example",
     "watch": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css --watch"
   },
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "keywords": [
     "bulma",
     "tailwind",
@@ -21,6 +24,7 @@
   "description": "This project is a conversion of the Bulma CSS framework to Tailwind CSS. It provides a set of utility classes that mimic the styles and components of Bulma, allowing developers to easily transition from Bulma to Tailwind while maintaining a familiar design system.",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
+    "copyfiles": "^2.4.1",
     "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.0.0"
