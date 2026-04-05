@@ -1,4 +1,10 @@
 @layer components {
+  /* Contenedor responsivo (scroll horizontal en móviles) */
+  .table-container {
+    @apply w-full overflow-x-auto;
+  }
+
+  /* Tabla base */
   .table {
     @apply w-full bg-white border-collapse;
   }
@@ -17,6 +23,7 @@
   .table tfoot th {
     @apply border-t-2 border-grey-dark;
   }
+
   /* Modificadores */
   .table.is-striped tbody tr:nth-child(even) {
     @apply bg-grey-light/50;
@@ -32,8 +39,91 @@
   .table.is-narrow th {
     @apply px-2 py-1;
   }
-  /* Tamaños */
   .table.is-fullwidth {
     @apply w-full;
+  }
+
+  /* Colores de fondo para filas o celdas (contextuales) */
+  .table .is-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .table .is-link {
+    background-color: var(--color-link);
+    color: white;
+  }
+  .table .is-info {
+    background-color: var(--color-info);
+    color: white;
+  }
+  .table .is-success {
+    background-color: var(--color-success);
+    color: white;
+  }
+  .table .is-warning {
+    background-color: var(--color-warning);
+    color: var(--color-dark);
+  }
+  .table .is-danger {
+    background-color: var(--color-danger);
+    color: white;
+  }
+  .table .is-light {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  .table .is-dark {
+    background-color: var(--color-dark);
+    color: white;
+  }
+
+  /* Filas completas con color (aplica a tr.is-primary, etc.) */
+  .table tr.is-primary,
+  .table tr.is-link,
+  .table tr.is-info,
+  .table tr.is-success,
+  .table tr.is-warning,
+  .table tr.is-danger,
+  .table tr.is-light,
+  .table tr.is-dark {
+    color: white;
+  }
+  .table tr.is-warning {
+    color: var(--color-dark);
+  }
+  .table tr.is-light {
+    color: var(--color-dark);
+  }
+  .table tr.is-primary td,
+  .table tr.is-primary th {
+    background-color: var(--color-primary);
+  }
+  .table tr.is-link td,
+  .table tr.is-link th {
+    background-color: var(--color-link);
+  }
+  .table tr.is-info td,
+  .table tr.is-info th {
+    background-color: var(--color-info);
+  }
+  .table tr.is-success td,
+  .table tr.is-success th {
+    background-color: var(--color-success);
+  }
+  .table tr.is-warning td,
+  .table tr.is-warning th {
+    background-color: var(--color-warning);
+  }
+  .table tr.is-danger td,
+  .table tr.is-danger th {
+    background-color: var(--color-danger);
+  }
+  .table tr.is-light td,
+  .table tr.is-light th {
+    background-color: var(--color-light);
+  }
+  .table tr.is-dark td,
+  .table tr.is-dark th {
+    background-color: var(--color-dark);
   }
 }

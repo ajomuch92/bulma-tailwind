@@ -280,13 +280,70 @@
             </div>
         </div>
 
-        <!-- Table -->
+        <!-- Table - todas las variantes -->
         <div class="demo-section">
             <div class="demo-title">Tablas (.table)</div>
-            <table class="table is-striped is-hoverable">
-                <thead><tr><th>Nombre</th><th>Edad</th></tr></thead>
-                <tbody><tr><td>Ana</td><td>25</td></tr><tr><td>Luis</td><td>30</td></tr></tbody>
-            </table>
+            <p>Tabla básica con borde, rayas y hover</p>
+            <div class="table-container">
+                <table class="table is-striped is-hoverable is-bordered is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ana</td>
+                            <td>25</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr class="is-primary">
+                            <td>Fila primaria (is-primary)</td>
+                            <td>30</td>
+                            <td>Barcelona</td>
+                        </tr>
+                        <tr class="is-link">
+                            <td>Fila link</td>
+                            <td>22</td>
+                            <td>Valencia</td>
+                        </tr>
+                        <tr class="is-info">
+                            <td>Fila info</td>
+                            <td>28</td>
+                            <td>Sevilla</td>
+                        </tr>
+                        <tr class="is-success">
+                            <td>Fila success</td>
+                            <td>35</td>
+                            <td>Bilbao</td>
+                        </tr>
+                        <tr class="is-warning">
+                            <td>Fila warning</td>
+                            <td>40</td>
+                            <td>Zaragoza</td>
+                        </tr>
+                        <tr class="is-danger">
+                            <td>Fila danger</td>
+                            <td>19</td>
+                            <td>Málaga</td>
+                        </tr>
+                        <tr class="is-light">
+                            <td>Fila light</td>
+                            <td>27</td>
+                            <td>Murcia</td>
+                        </tr>
+                        <tr class="is-dark">
+                            <td>Fila dark</td>
+                            <td>33</td>
+                            <td>Palma</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="help" style="margin-top: 0.5rem;">La tabla tiene <code>.table-container</code> para scroll horizontal en móviles, y modificadores <code>.is-striped</code>, <code>.is-hoverable</code>, <code>.is-bordered</code>, <code>.is-fullwidth</code>.</p>
+            <p class="help">También puedes aplicar colores a celdas individuales con <code>.is-primary</code>, <code>.is-danger</code>, etc. sobre <code>&lt;td&gt;</code> o <code>&lt;th&gt;</code>.</p>
         </div>
 
 
