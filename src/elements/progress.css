@@ -6,10 +6,12 @@
     @apply bg-grey-light rounded-full;
   }
   progress::-webkit-progress-value {
-    @apply bg-primary rounded-full transition-all;
+    @apply rounded-full transition-all;
+    background-color: currentColor;
   }
   progress::-moz-progress-bar {
-    @apply bg-primary rounded-full;
+    @apply rounded-full transition-all;
+    background-color: currentColor;
   }
 
   /* Tamaños */
@@ -23,45 +25,35 @@
     @apply h-6;
   }
 
-  /* Colores - todas las variantes */
-  progress.is-primary::-webkit-progress-value,
-  progress.is-primary::-moz-progress-bar {
-    background-color: var(--color-primary);
+  /* Colores - asignamos el color al elemento progress, los pseudoelementos usan currentColor */
+  progress.is-primary {
+    color: var(--color-primary);
   }
-  progress.is-link::-webkit-progress-value,
-  progress.is-link::-moz-progress-bar {
-    background-color: var(--color-link);
+  progress.is-link {
+    color: var(--color-link);
   }
-  progress.is-info::-webkit-progress-value,
-  progress.is-info::-moz-progress-bar {
-    background-color: var(--color-info);
+  progress.is-info {
+    color: var(--color-info);
   }
-  progress.is-success::-webkit-progress-value,
-  progress.is-success::-moz-progress-bar {
-    background-color: var(--color-success);
+  progress.is-success {
+    color: var(--color-success);
   }
-  progress.is-warning::-webkit-progress-value,
-  progress.is-warning::-moz-progress-bar {
-    background-color: var(--color-warning);
+  progress.is-warning {
+    color: var(--color-warning);
   }
-  progress.is-danger::-webkit-progress-value,
-  progress.is-danger::-moz-progress-bar {
-    background-color: var(--color-danger);
+  progress.is-danger {
+    color: var(--color-danger);
   }
-  progress.is-dark::-webkit-progress-value,
-  progress.is-dark::-moz-progress-bar {
-    background-color: var(--color-dark);
+  progress.is-dark {
+    color: var(--color-dark);
   }
-  progress.is-light::-webkit-progress-value,
-  progress.is-light::-moz-progress-bar {
-    background-color: var(--color-light);
+  progress.is-light {
+    color: var(--color-light);
   }
-  progress.is-white::-webkit-progress-value,
-  progress.is-white::-moz-progress-bar {
-    background-color: white;
+  progress.is-white {
+    color: var(--color-white);
   }
-  progress.is-black::-webkit-progress-value,
-  progress.is-black::-moz-progress-bar {
-    background-color: var(--color-black);
+  progress.is-black {
+    color: var(--color-black);
   }
 }
