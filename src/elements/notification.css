@@ -1,45 +1,97 @@
 @layer components {
   .notification {
-    @apply p-4 rounded-lg text-dark;
+    @apply p-4 rounded-lg text-dark w-full;
     background-color: var(--color-grey-light);
   }
   .notification:not(:last-child) {
     @apply mb-4;
   }
-  /* Colores */
+
+  /* Colores sólidos */
   .notification.is-primary {
     background-color: var(--color-primary);
-    @apply text-white;
+    color: white;
   }
   .notification.is-link {
     background-color: var(--color-link);
-    @apply text-white;
+    color: white;
   }
   .notification.is-info {
     background-color: var(--color-info);
-    @apply text-white;
+    color: white;
   }
   .notification.is-success {
     background-color: var(--color-success);
-    @apply text-white;
+    color: white;
   }
   .notification.is-warning {
     background-color: var(--color-warning);
-    @apply text-dark;
+    color: var(--color-dark);
   }
   .notification.is-danger {
     background-color: var(--color-danger);
-    @apply text-white;
+    color: white;
   }
   .notification.is-light {
     background-color: var(--color-light);
-    @apply text-dark;
+    color: var(--color-dark);
   }
   .notification.is-dark {
     background-color: var(--color-dark);
-    @apply text-white;
+    color: white;
   }
-  /* Dentro de notificación puede haber delete */
+  .notification.is-white {
+    background-color: white;
+    color: var(--color-dark);
+    border: 1px solid var(--color-grey);
+  }
+  .notification.is-black {
+    background-color: var(--color-black);
+    color: white;
+  }
+
+  /* Variantes claras (light) */
+  .notification.is-primary.is-light {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, white);
+    color: var(--color-primary);
+  }
+  .notification.is-link.is-light {
+    background-color: color-mix(in srgb, var(--color-link) 10%, white);
+    color: var(--color-link);
+  }
+  .notification.is-info.is-light {
+    background-color: color-mix(in srgb, var(--color-info) 10%, white);
+    color: var(--color-info);
+  }
+  .notification.is-success.is-light {
+    background-color: color-mix(in srgb, var(--color-success) 10%, white);
+    color: var(--color-success);
+  }
+  .notification.is-warning.is-light {
+    background-color: color-mix(in srgb, var(--color-warning) 10%, white);
+    color: var(--color-warning);
+  }
+  .notification.is-danger.is-light {
+    background-color: color-mix(in srgb, var(--color-danger) 10%, white);
+    color: var(--color-danger);
+  }
+  .notification.is-dark.is-light {
+    background-color: color-mix(in srgb, var(--color-dark) 10%, white);
+    color: var(--color-dark);
+  }
+
+  /* Tamaños */
+  .notification.is-small {
+    @apply text-sm py-2 px-3;
+  }
+  .notification.is-medium {
+    @apply text-base py-5 px-6;
+  }
+  .notification.is-large {
+    @apply text-lg py-6 px-8;
+  }
+
+  /* Botón delete dentro de notificación */
   .notification .delete {
     @apply float-right;
   }
