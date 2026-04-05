@@ -1,0 +1,63 @@
+@layer components {
+  .message {
+    @apply rounded-lg overflow-hidden mb-4;
+    background-color: var(--color-light);
+  }
+  .message-header {
+    @apply px-4 py-2 font-bold;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+  .message-body {
+    @apply p-4 border-l-4;
+    border-left-color: var(--color-dark);
+  }
+  /* Colores */
+  .message.is-primary .message-header {
+    background-color: var(--color-primary);
+  }
+  .message.is-primary .message-body {
+    border-left-color: var(--color-primary);
+  }
+  .message.is-link .message-header {
+    background-color: var(--color-link);
+  }
+  .message.is-link .message-body {
+    border-left-color: var(--color-link);
+  }
+  .message.is-info .message-header {
+    background-color: var(--color-info);
+  }
+  .message.is-info .message-body {
+    border-left-color: var(--color-info);
+  }
+  .message.is-success .message-header {
+    background-color: var(--color-success);
+  }
+  .message.is-success .message-body {
+    border-left-color: var(--color-success);
+  }
+  .message.is-warning .message-header {
+    background-color: var(--color-warning);
+    color: var(--color-dark);
+  }
+  .message.is-warning .message-body {
+    border-left-color: var(--color-warning);
+  }
+  .message.is-danger .message-header {
+    background-color: var(--color-danger);
+  }
+  .message.is-danger .message-body {
+    border-left-color: var(--color-danger);
+  }
+  /* Tamaños */
+  .message.is-small {
+    @apply text-sm;
+  }
+  .message.is-medium {
+    @apply text-base;
+  }
+  .message.is-large {
+    @apply text-lg;
+  }
+}

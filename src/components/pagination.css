@@ -1,0 +1,40 @@
+@layer components {
+  .pagination {
+    @apply flex flex-wrap justify-center items-center gap-2;
+  }
+  .pagination-list {
+    @apply flex flex-wrap gap-1;
+  }
+  .pagination-link,
+  .pagination-previous,
+  .pagination-next,
+  .pagination-ellipsis {
+    @apply inline-flex items-center justify-center min-w-8 h-8 px-2 rounded-md border border-grey bg-white text-dark hover:bg-grey-light transition-colors;
+  }
+  .pagination-link.is-current {
+    @apply bg-primary text-white border-primary;
+  }
+  .pagination-previous,
+  .pagination-next {
+    @apply px-4;
+  }
+  .pagination-ellipsis {
+    @apply border-none bg-transparent;
+  }
+  /* Tamaños */
+  .pagination.is-small .pagination-link,
+  .pagination.is-small .pagination-previous,
+  .pagination.is-small .pagination-next {
+    @apply text-sm h-6 min-w-6;
+  }
+  .pagination.is-medium .pagination-link,
+  .pagination.is-medium .pagination-previous,
+  .pagination.is-medium .pagination-next {
+    @apply text-base h-10 min-w-10;
+  }
+  .pagination.is-large .pagination-link,
+  .pagination.is-large .pagination-previous,
+  .pagination.is-large .pagination-next {
+    @apply text-lg h-12 min-w-12;
+  }
+}

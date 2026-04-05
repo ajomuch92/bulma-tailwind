@@ -1,0 +1,38 @@
+@layer components {
+  .tabs {
+    @apply flex flex-wrap border-b border-grey;
+  }
+  .tabs li {
+    @apply -mb-px;
+  }
+  .tabs li a {
+    @apply block px-4 py-2 border-b-2 border-transparent text-grey-dark hover:text-dark transition-colors;
+  }
+  .tabs li.is-active a {
+    @apply border-primary text-primary font-semibold;
+  }
+  /* Alineación */
+  .tabs.is-centered {
+    @apply justify-center;
+  }
+  .tabs.is-right {
+    @apply justify-end;
+  }
+  /* Tamaños */
+  .tabs.is-small li a {
+    @apply text-sm px-2 py-1;
+  }
+  .tabs.is-medium li a {
+    @apply text-lg px-5 py-3;
+  }
+  .tabs.is-large li a {
+    @apply text-xl px-6 py-4;
+  }
+  /* Estilo toggle (sin bordes) */
+  .tabs.is-toggle li a {
+    @apply border border-grey rounded-t-md -mb-px;
+  }
+  .tabs.is-toggle li.is-active a {
+    @apply border-primary bg-primary text-white;
+  }
+}

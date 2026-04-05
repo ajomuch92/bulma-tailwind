@@ -1,0 +1,31 @@
+@layer components {
+  .panel {
+    @apply rounded-lg shadow-sm overflow-hidden;
+    border: 1px solid var(--color-grey);
+  }
+  .panel-heading {
+    @apply px-4 py-2 font-bold border-b;
+    background-color: var(--color-light);
+    border-bottom-color: var(--color-grey);
+  }
+  .panel-tabs {
+    @apply flex border-b;
+    border-bottom-color: var(--color-grey);
+  }
+  .panel-tabs a {
+    @apply flex-1 text-center py-2 hover:bg-grey-light transition-colors;
+  }
+  .panel-tabs a.is-active {
+    @apply border-b-2 border-primary font-semibold;
+  }
+  .panel-block {
+    @apply flex items-center px-4 py-2 border-b hover:bg-grey-light transition-colors;
+    border-bottom-color: var(--color-grey);
+  }
+  .panel-block:last-child {
+    @apply border-b-0;
+  }
+  .panel-icon {
+    @apply mr-2 text-grey-dark;
+  }
+}
