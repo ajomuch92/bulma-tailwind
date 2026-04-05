@@ -1,0 +1,21 @@
+@layer components {
+  .title {
+    @apply font-bold leading-tight text-dark;
+  }
+  .title.is-1 { @apply text-4xl; }
+  .title.is-2 { @apply text-3xl; }
+  .title.is-3 { @apply text-2xl; }
+  .title.is-4 { @apply text-xl; }
+  .title.is-5 { @apply text-lg; }
+  .title.is-6 { @apply text-base; }
+  
+  .subtitle {
+    @apply text-grey-dark font-normal leading-normal;
+  }
+  .subtitle.is-1 { @apply text-3xl; }
+  .subtitle.is-2 { @apply text-2xl; }
+  .subtitle.is-3 { @apply text-xl; }
+  .subtitle.is-4 { @apply text-lg; }
+  .subtitle.is-5 { @apply text-base; }
+  .subtitle.is-6 { @apply text-sm; }
+}

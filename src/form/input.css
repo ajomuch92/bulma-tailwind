@@ -1,0 +1,9 @@
+@layer components {
+  .input, .textarea {
+    @apply w-full px-3 py-2 border border-grey rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+  .input.is-small { @apply text-sm py-1; }
+  .input.is-medium { @apply text-base py-2.5; }
+  .input.is-large { @apply text-lg py-3; }
+  .input.is-primary { @apply border-primary; }
+}

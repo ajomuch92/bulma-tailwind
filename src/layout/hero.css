@@ -1,0 +1,8 @@
+@layer components {
+  .hero {
+    @apply bg-primary text-white py-12;
+  }
+  .hero.is-medium { @apply py-24; }
+  .hero.is-large { @apply py-48; }
+  .hero-body { @apply container mx-auto px-4; }
+}

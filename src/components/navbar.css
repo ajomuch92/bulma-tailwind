@@ -1,0 +1,20 @@
+@layer components {
+  .navbar {
+    @apply bg-white shadow-sm;
+  }
+  .navbar-brand {
+    @apply flex items-center justify-between p-3;
+  }
+  .navbar-menu {
+    @apply hidden md:flex md:items-center;
+  }
+  .navbar-start, .navbar-end {
+    @apply flex flex-col md:flex-row gap-2;
+  }
+  .navbar-item {
+    @apply px-3 py-2 hover:bg-grey-light rounded;
+  }
+  .navbar-burger {
+    @apply block md:hidden cursor-pointer p-3;
+  }
+}

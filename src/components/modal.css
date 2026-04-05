@@ -1,0 +1,26 @@
+@layer components {
+  .modal {
+    @apply fixed inset-0 z-50 hidden items-center justify-center;
+  }
+  .modal.is-active {
+    @apply flex;
+  }
+  .modal-background {
+    @apply absolute inset-0 bg-black/80;
+  }
+  .modal-card {
+    @apply relative bg-white rounded-lg shadow-xl w-full max-w-md mx-4;
+  }
+  .modal-card-head {
+    @apply flex justify-between items-center p-4 border-b border-grey;
+  }
+  .modal-card-body {
+    @apply p-4;
+  }
+  .modal-card-foot {
+    @apply flex justify-end gap-2 p-4 border-t border-grey;
+  }
+  .modal-close {
+    @apply absolute top-2 right-2 w-6 h-6 rounded-full bg-grey-dark text-white flex items-center justify-center cursor-pointer;
+  }
+}

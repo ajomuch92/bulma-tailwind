@@ -1,0 +1,65 @@
+@layer components {
+  .button {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded font-medium transition-all duration-200 cursor-pointer border border-transparent;
+    font-size: var(--text-size-normal);
+  }
+  
+  /* Sizes */
+  .button.is-small {
+    @apply px-2 py-1 text-sm rounded-sm;
+  }
+  .button.is-medium {
+    @apply px-5 py-2.5 text-base;
+  }
+  .button.is-large {
+    @apply px-6 py-3 text-lg;
+  }
+  
+  /* Colors */
+  .button.is-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  .button.is-link {
+    @apply bg-link text-white hover:bg-link/90;
+  }
+  .button.is-info {
+    @apply bg-info text-white hover:bg-info/90;
+  }
+  .button.is-success {
+    @apply bg-success text-white hover:bg-success/90;
+  }
+  .button.is-warning {
+    @apply bg-warning text-dark hover:bg-warning/90;
+  }
+  .button.is-danger {
+    @apply bg-danger text-white hover:bg-danger/90;
+  }
+  .button.is-light {
+    @apply bg-light text-dark hover:bg-gray-200;
+  }
+  .button.is-dark {
+    @apply bg-dark text-white hover:bg-dark/90;
+  }
+  .button.is-white {
+    @apply bg-white text-dark border-grey hover:bg-gray-50;
+  }
+  .button.is-black {
+    @apply bg-black text-white hover:bg-black/90;
+  }
+  
+  /* States */
+  .button.is-outlined {
+    @apply bg-transparent border-current;
+  }
+  .button.is-outlined.is-primary {
+    @apply text-primary border-primary hover:bg-primary/10;
+  }
+  .button.is-loading {
+    @apply relative text-transparent pointer-events-none;
+  }
+  .button.is-loading::after {
+    content: "";
+    @apply absolute w-4 h-4 border-2 border-t-transparent rounded-full animate-spin;
+    border-color: currentColor transparent transparent transparent;
+  }
+}

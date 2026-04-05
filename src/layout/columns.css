@@ -1,0 +1,25 @@
+@layer components {
+  .columns {
+    @apply flex flex-wrap -mx-2;
+  }
+  .column {
+    @apply px-2 flex-1;
+  }
+  .column.is-1 { @apply w-1/12; }
+  .column.is-2 { @apply w-2/12; }
+  .column.is-3 { @apply w-3/12; }
+  .column.is-4 { @apply w-4/12; }
+  .column.is-5 { @apply w-5/12; }
+  .column.is-6 { @apply w-6/12; }
+  .column.is-7 { @apply w-7/12; }
+  .column.is-8 { @apply w-8/12; }
+  .column.is-9 { @apply w-9/12; }
+  .column.is-10 { @apply w-10/12; }
+  .column.is-11 { @apply w-11/12; }
+  .column.is-12 { @apply w-full; }
+  
+  @media (min-width: 769px) {
+    .column.is-offset-1 { margin-left: 8.333%; }
+    /* ... resto de offsets ... */
+  }
+}

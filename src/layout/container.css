@@ -1,0 +1,12 @@
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+    max-width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .container { max-width: 960px; }
+  }
+  @media (min-width: 1216px) {
+    .container { max-width: 1152px; }
+  }
+}
