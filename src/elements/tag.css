@@ -5,47 +5,80 @@
   .tag:not(:last-child) {
     @apply mr-1;
   }
-  /* Colores */
+
+  /* Colores sólidos */
   .tag.is-primary {
     background-color: var(--color-primary);
-    @apply text-white;
+    color: white;
   }
   .tag.is-link {
     background-color: var(--color-link);
-    @apply text-white;
+    color: white;
   }
   .tag.is-info {
     background-color: var(--color-info);
-    @apply text-white;
+    color: white;
   }
   .tag.is-success {
     background-color: var(--color-success);
-    @apply text-white;
+    color: white;
   }
   .tag.is-warning {
     background-color: var(--color-warning);
-    @apply text-dark;
+    color: var(--color-dark);
   }
   .tag.is-danger {
     background-color: var(--color-danger);
-    @apply text-white;
+    color: white;
   }
   .tag.is-dark {
     background-color: var(--color-dark);
-    @apply text-white;
+    color: white;
   }
   .tag.is-light {
     background-color: var(--color-light);
-    @apply text-dark;
+    color: var(--color-dark);
   }
   .tag.is-white {
     background-color: white;
-    @apply text-dark border border-grey;
+    color: var(--color-dark);
+    border: 1px solid var(--color-grey);
   }
   .tag.is-black {
     background-color: var(--color-black);
-    @apply text-white;
+    color: white;
   }
+
+  /* Variantes claras (light) */
+  .tag.is-primary.is-light {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, white);
+    color: var(--color-primary);
+  }
+  .tag.is-link.is-light {
+    background-color: color-mix(in srgb, var(--color-link) 10%, white);
+    color: var(--color-link);
+  }
+  .tag.is-info.is-light {
+    background-color: color-mix(in srgb, var(--color-info) 10%, white);
+    color: var(--color-info);
+  }
+  .tag.is-success.is-light {
+    background-color: color-mix(in srgb, var(--color-success) 10%, white);
+    color: var(--color-success);
+  }
+  .tag.is-warning.is-light {
+    background-color: color-mix(in srgb, var(--color-warning) 10%, white);
+    color: var(--color-warning);
+  }
+  .tag.is-danger.is-light {
+    background-color: color-mix(in srgb, var(--color-danger) 10%, white);
+    color: var(--color-danger);
+  }
+  .tag.is-dark.is-light {
+    background-color: color-mix(in srgb, var(--color-dark) 10%, white);
+    color: var(--color-dark);
+  }
+
   /* Tamaños */
   .tag.is-small {
     @apply text-xs px-2 py-0.5 rounded;
@@ -56,7 +89,8 @@
   .tag.is-large {
     @apply text-lg px-5 py-2 rounded-lg;
   }
-  /* Tag con delete */
+
+  /* Tag con botón eliminar */
   .tag .delete {
     @apply ml-1 w-3 h-3;
   }
@@ -69,8 +103,18 @@
   .tag.is-large .delete {
     @apply w-5 h-5;
   }
+
   /* Grupo de tags */
   .tags {
     @apply flex flex-wrap gap-2;
+  }
+  .tags.has-addons {
+    @apply gap-0;
+  }
+  .tags.has-addons .tag:not(:first-child) {
+    @apply rounded-l-none;
+  }
+  .tags.has-addons .tag:not(:last-child) {
+    @apply rounded-r-none;
   }
 }
