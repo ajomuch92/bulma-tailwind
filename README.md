@@ -65,3 +65,9 @@ The package uses CSS variables defined in :root. You can override them:
 
 ## License
 MIT License
+
+## Warnings
+- This package is in early development. Not all Bulma classes are implemented yet, and some
+
+## Want to contribute?
+Feel free to open an issue or submit a pull request with your changes. Any help is appreciated!
