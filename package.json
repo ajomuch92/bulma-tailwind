@@ -1,0 +1,25 @@
+{
+  "name": "bulma-tailwind",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bulma",
+    "tailwind",
+    "css",
+    "framework",
+    "conversion",
+    "utility-classes"
+  ],
+  "author": "ajomuch92",
+  "license": "MIT",
+  "description": "This project is a conversion of the Bulma CSS framework to Tailwind CSS. It provides a set of utility classes that mimic the styles and components of Bulma, allowing developers to easily transition from Bulma to Tailwind while maintaining a familiar design system.",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "postcss": "^8.5.8",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.0.0"
+  }
+}
