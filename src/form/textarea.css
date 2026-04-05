@@ -1,28 +1,315 @@
 @layer components {
-  .textarea {
-    @apply block w-full px-3 py-2 border border-grey rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 resize-vertical;
+  /* Botón base - estilo normal de Bulma */
+  .button {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded font-medium transition-all duration-200 cursor-pointer;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-grey);
+    color: var(--color-dark);
+    font-size: var(--text-size-normal);
   }
+  .button:hover {
+    @apply brightness-95;
+  }
+
   /* Tamaños */
-  .textarea.is-small {
-    @apply text-sm py-1;
+  .button.is-small {
+    @apply px-2 py-1 text-sm rounded-sm;
   }
-  .textarea.is-medium {
-    @apply text-base py-2.5;
+  .button.is-medium {
+    @apply px-5 py-2.5 text-base;
   }
-  .textarea.is-large {
-    @apply text-lg py-3;
+  .button.is-large {
+    @apply px-6 py-3 text-lg;
   }
-  /* Estados */
-  .textarea.is-primary {
-    @apply border-primary;
+
+  /* Colores sólidos */
+  .button.is-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
   }
-  .textarea.is-danger {
-    @apply border-danger;
+  .button.is-primary:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, black);
   }
-  .textarea.is-rounded {
+
+  .button.is-link {
+    background-color: var(--color-link);
+    border-color: var(--color-link);
+    color: white;
+  }
+  .button.is-link:hover {
+    background-color: color-mix(in srgb, var(--color-link) 90%, black);
+  }
+
+  .button.is-info {
+    background-color: var(--color-info);
+    border-color: var(--color-info);
+    color: white;
+  }
+  .button.is-info:hover {
+    background-color: color-mix(in srgb, var(--color-info) 90%, black);
+  }
+
+  .button.is-success {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: white;
+  }
+  .button.is-success:hover {
+    background-color: color-mix(in srgb, var(--color-success) 90%, black);
+  }
+
+  .button.is-warning {
+    background-color: var(--color-warning);
+    border-color: var(--color-warning);
+    color: var(--color-dark);
+  }
+  .button.is-warning:hover {
+    background-color: color-mix(in srgb, var(--color-warning) 90%, black);
+  }
+
+  .button.is-danger {
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+    color: white;
+  }
+  .button.is-danger:hover {
+    background-color: color-mix(in srgb, var(--color-danger) 90%, black);
+  }
+
+  .button.is-light {
+    background-color: var(--color-light);
+    border-color: var(--color-grey);
+    color: var(--color-dark);
+  }
+  .button.is-light:hover {
+    background-color: color-mix(in srgb, var(--color-light) 90%, black);
+  }
+
+  .button.is-dark {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+    color: white;
+  }
+  .button.is-dark:hover {
+    background-color: color-mix(in srgb, var(--color-dark) 90%, black);
+  }
+
+  .button.is-white {
+    background-color: white;
+    border-color: var(--color-grey);
+    color: var(--color-dark);
+  }
+  .button.is-white:hover {
+    background-color: color-mix(in srgb, white 90%, black);
+  }
+
+  .button.is-black {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: white;
+  }
+  .button.is-black:hover {
+    background-color: color-mix(in srgb, var(--color-black) 90%, black);
+  }
+
+  /* Outlined */
+  .button.is-outlined {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+  .button.is-outlined.is-primary {
+    color: var(--color-primary);
+  }
+  .button.is-outlined.is-link {
+    color: var(--color-link);
+  }
+  .button.is-outlined.is-info {
+    color: var(--color-info);
+  }
+  .button.is-outlined.is-success {
+    color: var(--color-success);
+  }
+  .button.is-outlined.is-warning {
+    color: var(--color-warning);
+  }
+  .button.is-outlined.is-danger {
+    color: var(--color-danger);
+  }
+  .button.is-outlined.is-light {
+    color: var(--color-light);
+  }
+  .button.is-outlined.is-dark {
+    color: var(--color-dark);
+  }
+  .button.is-outlined.is-white {
+    color: white;
+  }
+  .button.is-outlined.is-black {
+    color: var(--color-black);
+  }
+  .button.is-outlined:hover {
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
+  }
+
+  /* Inverted */
+  .button.is-inverted {
+    background-color: transparent;
+    border-color: transparent;
+  }
+  .button.is-inverted.is-primary {
+    color: var(--color-primary);
+  }
+  .button.is-inverted.is-primary:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .button.is-inverted.is-link {
+    color: var(--color-link);
+  }
+  .button.is-inverted.is-link:hover {
+    background-color: var(--color-link);
+    color: white;
+  }
+  .button.is-inverted.is-info {
+    color: var(--color-info);
+  }
+  .button.is-inverted.is-info:hover {
+    background-color: var(--color-info);
+    color: white;
+  }
+  .button.is-inverted.is-success {
+    color: var(--color-success);
+  }
+  .button.is-inverted.is-success:hover {
+    background-color: var(--color-success);
+    color: white;
+  }
+  .button.is-inverted.is-warning {
+    color: var(--color-warning);
+  }
+  .button.is-inverted.is-warning:hover {
+    background-color: var(--color-warning);
+    color: var(--color-dark);
+  }
+  .button.is-inverted.is-danger {
+    color: var(--color-danger);
+  }
+  .button.is-inverted.is-danger:hover {
+    background-color: var(--color-danger);
+    color: white;
+  }
+  .button.is-inverted.is-light {
+    color: var(--color-light);
+  }
+  .button.is-inverted.is-light:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+  .button.is-inverted.is-dark {
+    color: var(--color-dark);
+  }
+  .button.is-inverted.is-dark:hover {
+    background-color: var(--color-dark);
+    color: white;
+  }
+
+  /* Rounded */
+  .button.is-rounded {
     @apply rounded-full;
   }
-  .textarea.has-fixed-size {
-    @apply resize-none;
+
+  /* Fullwidth */
+  .button.is-fullwidth {
+    @apply w-full;
+  }
+
+   /* Loading */
+  .button.is-loading {
+    @apply relative text-transparent pointer-events-none;
+  }
+  .button.is-loading::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: button-spin 0.6s linear infinite;
+  }
+
+  @keyframes button-spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Asegura que el color del spinner sea el mismo que el texto del botón */
+  .button.is-loading.is-primary::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-link::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-info::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-success::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-warning::after {
+    border-top-color: var(--color-dark);
+  }
+  .button.is-loading.is-danger::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-dark::after {
+    border-top-color: white;
+  }
+  .button.is-loading.is-light::after {
+    border-top-color: var(--color-dark);
+  }
+  .button.is-loading.is-white::after {
+    border-top-color: var(--color-dark);
+  }
+  .button.is-loading.is-black::after {
+    border-top-color: white;
+  }
+
+  /* Disabled */
+  .button:disabled,
+  .button.is-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  /* Text button */
+  .button.is-text {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-dark);
+  }
+  .button.is-text:hover {
+    background-color: var(--color-grey-light);
+  }
+  .button.is-text.is-primary {
+    color: var(--color-primary);
+  }
+  .button.is-text.is-link {
+    color: var(--color-link);
+  }
+  .button.is-text.is-info {
+    color: var(--color-info);
+  }
+  .button.is-text.is-success {
+    color: var(--color-success);
+  }
+  .button.is-text.is-warning {
+    color: var(--color-warning);
+  }
+  .button.is-text.is-danger {
+    color: var(--color-danger);
   }
 }
