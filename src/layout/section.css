@@ -1,0 +1,11 @@
+@layer components {
+  .section {
+    @apply py-12 px-4;
+  }
+  .section.is-medium {
+    @apply py-24;
+  }
+  .section.is-large {
+    @apply py-48;
+  }
+}
