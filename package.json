@@ -1,10 +1,13 @@
 {
   "name": "bulma-tailwind",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "dist/bulma-tailwind.css",
+  "style": "dist/bulma-tailwind.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css",
+    "watch": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css --watch"
   },
+  "files": ["dist"],
   "keywords": [
     "bulma",
     "tailwind",
