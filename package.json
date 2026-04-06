@@ -8,8 +8,7 @@
     "watch": "postcss src/bulma-tailwind.css -o dist/bulma-tailwind.css --watch"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "keywords": [
     "bulma",
@@ -20,6 +19,10 @@
     "utility-classes"
   ],
   "author": "ajomuch92",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajomuch92/bulma-tailwind.git"
+  },
   "license": "MIT",
   "description": "This project is a conversion of the Bulma CSS framework to Tailwind CSS. It provides a set of utility classes that mimic the styles and components of Bulma, allowing developers to easily transition from Bulma to Tailwind while maintaining a familiar design system.",
   "devDependencies": {
