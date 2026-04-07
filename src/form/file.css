@@ -42,3 +42,71 @@
     @apply rounded-md border-2 border-l-0;
   }
 }
+
+@layer components {
+  .file {
+    @apply relative inline-flex items-stretch;
+  }
+  .file-input {
+    @apply absolute inset-0 opacity-0 cursor-pointer w-full h-full;
+  }
+  .file-cta {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-l-md border transition;
+    background-color: var(--color-light);
+    border-color: var(--color-grey);
+    color: var(--color-dark);
+  }
+  .file-name {
+    @apply inline-flex items-center px-3 py-2 rounded-r-md border border-l-0 whitespace-nowrap overflow-hidden text-ellipsis;
+    background-color: white;
+    border-color: var(--color-grey);
+    color: var(--color-dark);
+  }
+
+  /* Boxed variant */
+  .file.is-boxed .file-cta {
+    @apply flex-col rounded-md border-2;
+    background-color: var(--color-light);
+  }
+  .file.is-boxed .file-name {
+    @apply rounded-md border-2 mt-2;
+  }
+  .file.is-boxed .file-icon {
+    @apply mb-1;
+  }
+
+  /* Icon inside file-cta (upload icon using pseudo-element) */
+  .file-icon {
+    @apply inline-flex items-center justify-center w-6 h-6;
+  }
+
+  /* Colors (solid) */
+  .file.primary .file-cta {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  .file.primary .file-icon::before {
+    content: "⬆️"; /* same icon, white by inheritance */
+  }
+
+  /* Sizes */
+  .file.small .file-cta,
+  .file.small .file-name {
+    @apply text-sm px-2 py-1;
+  }
+  .file.medium .file-cta,
+  .file.medium .file-name {
+    @apply text-base px-4 py-2.5;
+  }
+  .file.large .file-cta,
+  .file.large .file-name {
+    @apply text-lg px-5 py-3;
+  }
+
+  /* Disabled */
+  .file-input:disabled ~ .file-cta,
+  .file-input.disabled ~ .file-cta {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
