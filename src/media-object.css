@@ -2,7 +2,29 @@
   .media {
     @apply flex gap-4;
   }
-  .media-left { @apply flex-shrink-0; }
-  .media-content { @apply flex-1; }
-  .media-right { @apply flex-shrink-0; }
+  .media-left {
+    @apply flex-shrink-0;
+  }
+  .media-content {
+    @apply flex-1 pb-1;
+  }
+  .media-right {
+    @apply flex-shrink-0;
+  }
+
+  /* Cuando .media está dentro de .content */
+  .media-content .media {
+    @apply border-t border-b py-4;
+    border-color: var(--color-grey); /* mismo color que usa Bulma/Tailwind */
+  }
+
+  /* Opcional: quitar borde superior en el primer .media dentro de .content */
+  .media-content .media:first-child {
+    @apply border-t-0 pt-0;
+  }
+
+  /* Opcional: quitar borde inferior en el último .media */
+  .media-content .media:last-child {
+    @apply border-b-0 pb-0;
+  }
 }

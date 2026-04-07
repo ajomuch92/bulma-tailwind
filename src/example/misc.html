@@ -72,15 +72,15 @@
                 <p>This is a comment using the media object. It can contain text, images, and actions.</p>
                 <div class="media">
                     <div class="media-left"><figure class="image is-48x48"><img src="https://placehold.co/48x48" alt="avatar"></figure></div>
-                    <div class="media-content"><p><strong>Reply</strong> <br>Nested media object.</p></div>
+                    <div class="media-content">
+                        <div class="media">
+                            <div class="media-content"><input class="input" placeholder="Write a comment..."></div>
+                            <div class="media-right"><button class="button is-primary">Send</button></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="media-right"><button class="delete"></button></div>
-        </div>
-        <hr>
-        <div class="media">
-            <div class="media-content"><input class="input" placeholder="Write a comment..."></div>
-            <div class="media-right"><button class="button is-primary">Send</button></div>
         </div>
         <div class="code-container" id="code-section-1">
             <pre>&lt;div class="media"&gt;
